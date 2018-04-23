@@ -1,14 +1,14 @@
-# johnhckuo.react.github.io
+# johnhckuo.react.io
 Resume built with react.js
 
-![image](https://github.com/johnhckuo/johnhckuo.react/blob/master/cover.png)
+![image](https://github.com/johnhckuo/johnhckuo.react.io/blob/master/cover.png)
 
 ## Installation and Building
 
 ```bash
 # clone repository
-git clone https://github.com/johnhckuo/johnhckuo.react.git
-cd johnhckuo.react
+git clone https://github.com/johnhckuo/johnhckuo.react.io.git
+cd johnhckuo.react.io
 
 # install required packages and dependencies
 npm install
