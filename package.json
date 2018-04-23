@@ -18,7 +18,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/johnhckuo/johnhckuo.react.io"
+    "url": "git+https://github.com/johnhckuo/johnhckuo.github.io"
   },
   "dependencies": {
     "react": "^15.0.2"
