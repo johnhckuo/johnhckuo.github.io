@@ -11,6 +11,7 @@ export default class Routes extends React.Component{
     this.updateWindowDimensions = this.updateWindowDimensions.bind(this);
     this.backgroundBlur = this.backgroundBlur.bind(this);
     this.state = {init: false, blur: false, width: window.innerWidth, height: window.innerHeight};
+    this.BaseURL = "https://johnhckuo.github.io/";
   }
 
   componentDidMount(){
@@ -19,7 +20,6 @@ export default class Routes extends React.Component{
     }, 10)
     window.addEventListener('resize', this.updateWindowDimensions);
     this.updateWindowDimensions();
-    this.BaseURL = "https://johnhckuo.github.io/";
   }
 
   componentWillUnmount(){
