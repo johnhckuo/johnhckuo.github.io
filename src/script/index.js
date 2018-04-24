@@ -7,7 +7,7 @@ import "../style/reset.css"
 import "../style/global.css"
 
 const app = document.getElementById('app')
-const BaseURL = "https://johnhckuo.github.io/";
+const BaseURL = "/";
 
 ReactDOM.render(
 	<BrowserRouter basename={BaseURL}>
