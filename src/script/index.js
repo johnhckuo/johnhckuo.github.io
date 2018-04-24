@@ -7,9 +7,10 @@ import "../style/reset.css"
 import "../style/global.css"
 
 const app = document.getElementById('app')
+const BaseURL = "https://johnhckuo.github.io/";
 
 ReactDOM.render(
-	<BrowserRouter>
+	<BrowserRouter basename={BaseURL}>
 		<Routes />
 	</BrowserRouter>
  , app);

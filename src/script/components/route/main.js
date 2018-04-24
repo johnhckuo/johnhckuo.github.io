@@ -11,7 +11,6 @@ export default class Routes extends React.Component{
     this.updateWindowDimensions = this.updateWindowDimensions.bind(this);
     this.backgroundBlur = this.backgroundBlur.bind(this);
     this.state = {init: false, blur: false, width: window.innerWidth, height: window.innerHeight};
-    this.BaseURL = "https://johnhckuo.github.io/";
   }
 
   componentDidMount(){
@@ -44,27 +43,27 @@ export default class Routes extends React.Component{
         <Style.RootContainer>
             <Global.Background blur={this.state.blur}/>
             <Switch>
-                <Route exact path={this.BaseURL} render={
+                <Route exact path="/" render={
                   props=>
-                    <Index {...props} blur={this.backgroundBlur} width={this.state.width} height={this.state.height } BaseURL={this.BaseURL}/>
+                    <Index {...props} blur={this.backgroundBlur} width={this.state.width} height={this.state.height } />
                   }
                 />
-                <Route exact path={this.BaseURL + "aboutme"} render={
+                <Route exact path="/aboutme" render={
                   props=>
                     <Aboutme {...props} blur={this.backgroundBlur} width={this.state.width} height={this.state.height } />
                   }
                 />
-                <Route exact path={this.BaseURL + "experience"} render={
+                <Route exact path="/experience" render={
                   props=>
                     <Experience {...props} blur={this.backgroundBlur} width={this.state.width} height={this.state.height } />
                   }
                 />
-                <Route exact path={this.BaseURL + "portfolio"} render={
+                <Route exact path="/portfolio" render={
                   props=>
                     <Portfolio {...props} blur={this.backgroundBlur} width={this.state.width} height={this.state.height }/>
                   }
                 />
-                <Route exact path={this.BaseURL + "contact"} render={
+                <Route exact path="/contact" render={
                   props=>
                     <Contact {...props} blur={this.backgroundBlur} width={this.state.width} height={this.state.height }/>
                   }
@@ -82,5 +81,5 @@ export default class Routes extends React.Component{
 
 const GenericNotFound = ()=>{
   alert("Page not found! Redirecting you to the main page...");
-  return <Redirect to={this.BaseURL} />
+  return <Redirect to="/" />
 }
