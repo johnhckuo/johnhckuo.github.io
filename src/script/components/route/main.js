@@ -19,6 +19,7 @@ export default class Routes extends React.Component{
     }, 10)
     window.addEventListener('resize', this.updateWindowDimensions);
     this.updateWindowDimensions();
+    console.log(process.env)
   }
 
   componentWillUnmount(){
