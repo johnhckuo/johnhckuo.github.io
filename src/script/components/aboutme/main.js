@@ -37,9 +37,18 @@ export default class Aboutme extends React.Component{
 							I hold over 7 years of programming experience. <br />
 							Love to work on some side projects related to web development, blockchain applications, and 3D game development.
 							<Global.HR />
-							I've received my master degree in July, 2017.
+							I've received my master degree in July, 2017. <br />
 							My research is based on blockchain, and I've proposed a method to facilitate
-							the design of a blockchain-based ecosystem toward success and to make it self-sustaining.
+							the design of a blockchain-based ecosystem toward success and to make it self-sustaining. <br />
+							And I've built a web-based farming game that allows users to trade with multiple users at the same time! <br />
+							What make this game so special are that: 
+							<ul>
+								<li>All the trading process and results will be recored on Ethereum blockchain.</li>
+								<li>Players can choose to play as a thief to steal other farmers' crops, or to play as cop to guard the farmers.</li>
+								<li>Farmers can have a multi-party transaction with other players. It means that if A got what B wants, B got what C wants, and C got what A wants, then a transaction consists of A → B → C → A will be established.</li>
+							</ul>
+							As a result, this game eventually hits 300+ active users.
+
 						</Style.Aboutme>
 					</div>
 				</Style.Intro>

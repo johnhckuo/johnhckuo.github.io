@@ -24,6 +24,10 @@ export const Aboutme = styled.div`
 	text-align: left;
 	font-size: 1.1rem;
 	line-height: 1.5;
+	ul{
+		list-style-type: square;
+		padding-left: 2rem;
+	}
 `;
 
 export const Characteristic = styled.div`
