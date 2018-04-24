@@ -24,7 +24,7 @@ export default class Contact extends React.Component{
 	}
 
 	componentDidMount(){
-		if (!firebase){
+		if (!firebase.apps.length) {
 			var config = {
 				apiKey: "AIzaSyA9QLI2RDzhBFAYb6LZq5bnsgYg28TNxeo",
 				authDomain: "resume-f25af.firebaseapp.com",
