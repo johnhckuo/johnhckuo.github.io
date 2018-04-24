@@ -55,8 +55,11 @@ export default class Contact extends React.Component{
 	}
 
 	formSubmit(){
-		if (!this.feedback.name || !this.feedback.message || !this.feedback.email){
-			alert("Oops, you've missed some slots");
+		if (!this.validateInput("name", this.feedback.name) 
+			|| !this.validateInput("message", this.feedback.message) 
+			|| !this.validateInput("email", this.feedback.email)
+		){
+			alert("Oops, you've mis-filled some slots");
 			return;
 		}
 		this.feedback.message = this.feedback.message.replace(/[^a-zA-Z 0-9]+/g,'');
