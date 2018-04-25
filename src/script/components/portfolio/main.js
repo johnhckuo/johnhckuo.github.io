@@ -33,7 +33,7 @@ export default class Portfolio extends React.Component{
         type="large"
         history={this.props.history}
         FirstTitle="Portfolio"
-        SecondTitle={<React.Fragment>These are my after-school projects And I&#39;m proud of them <FontAwesome.FaHeart /></React.Fragment>}
+        SecondTitle={<React.Fragment>These are my after-school projects, and I&#39;m proud of them <FontAwesome.FaHeart /></React.Fragment>}
       >
         <Style.Filter>
           <Style.FilterInput onChange={this.filter.bind(this)} list="hashtags"/>

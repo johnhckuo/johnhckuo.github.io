@@ -39,7 +39,7 @@ const Aboutme = (props)=>{
 							<li>Farmers can have a multi-party transaction with other players. It means that if A got what B wants, B got what C wants, and C got what A wants, then a transaction consists of A → B → C → A will be established.</li>
 						</ul>
 						<br />
-						As a result, Blockfarm eventually hits 300+ active users.
+						In the end, Blockfarm hits 300+ active users!
 
 					</Style.Aboutme>
 				</div>
