@@ -41,7 +41,7 @@ export default class Routes extends React.Component{
   render(){
     return (
         <Style.RootContainer>
-            <Global.Background blur={this.state.blur}/>
+            <Global.Background blur={this.state.blur} init={this.state.init}/>
             <Switch>
                 <Route exact path="/" render={
                   props=>

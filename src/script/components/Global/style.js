@@ -32,11 +32,12 @@ export const Background = styled.div`
 	width: 100vw;
 	height: 100vh;
 	background-image: url(${background});
-    background-repeat:no-repeat;
-    background-size:100% 100%;
+  background-repeat:no-repeat;
+  background-size:100% 100%;
 	background-attachment: fixed;
 	${props=>blur(props.blur)};
 	transition: all .5s;
+	opacity:${props=>props.init ? 1 : 0};
 	&:before{
 		position: absolute;
 	    z-index: 2;
