@@ -1,16 +1,15 @@
 import React from "react"
 import * as Style from "./style.js"
-import * as Global from "../global/style"
 import * as FontAwesome from 'react-icons/lib/fa'
 import Portfolios from "./data"
-import HomeButton from "../global/HomeButton"
+import Container from "../global/Container"
 
 export default class Portfolio extends React.Component{
   constructor(props){
     super(props);
     this.filter = this.filter.bind(this);
     this.isContain = this.isContain.bind(this);
-    this.state = {init: false, hashtagSearch: ""};
+    this.state = {hashtagSearch: ""};
   }
 
   filter(e){
@@ -30,13 +29,12 @@ export default class Portfolio extends React.Component{
 
   render(){
     return (
-      <Global.Container type="large" active={this.state.init}>
-        <HomeButton history={this.props.history} setActive={(init)=>this.setState({init})} />
-        <Global.Title>
-          <h2>Portfolio</h2>
-          <Global.HR />
-          <h3>These are my after-school projects And I'm proud of them <FontAwesome.FaHeart /></h3>
-        </Global.Title>
+      <Container
+        type="large"
+        history={this.props.history}
+        FirstTitle="Portfolio"
+        SecondTitle={<React.Fragment>These are my after-school projects And I&#39;m proud of them <FontAwesome.FaHeart /></React.Fragment>}
+      >
         <Style.Filter>
           <Style.FilterInput onChange={this.filter.bind(this)} list="hashtags"/>
           <HashTagList />
@@ -70,7 +68,7 @@ export default class Portfolio extends React.Component{
           }
 
         </Style.Portfolio>
-      </Global.Container>
+      </Container>
     );
   }
 }

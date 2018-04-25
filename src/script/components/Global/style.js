@@ -47,7 +47,7 @@ export const Background = styled.div`
 	}
 `;
 
-export const Container = styled.div`
+export const ContainerStyle = styled.div`
 	top: 15%;
 	left: ${props=> props.type === "small" ? "25%" : "10%"};
 	margin-bottom: 15%;
@@ -85,7 +85,7 @@ export const Title = styled.div`
 	}
 `;
 
-export const HomeBtn = styled.span`
+export const HomeBtnStyle = styled.span`
 
 	position: absolute;
 	left: 10px;

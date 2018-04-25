@@ -50,18 +50,26 @@ export const Form = styled.div`
 		    padding-right: 5px;
     	}
 	}
-`;
 
-export const Input = styled.input`
+  input{
+    ${inputCommon()};
+  }
+
+  textarea{
     ${inputCommon()}
-`;
-
-
-export const Comment = styled.textarea`
-	${inputCommon()}
     height:100px;
-`;
+  }
 
+  i{
+    display: ${props=>props.window === "mobile" ? "none" : "inline-block"};
+    width: 200px;
+    color: red;
+    font-size: 1rem;
+    position: absolute;
+    top: -1.1rem;
+    font-weight: lighter;
+  }
+`;
 
 export const EmailMe = styled.p`
 	text-align: center;
@@ -71,15 +79,4 @@ export const EmailMe = styled.p`
 		text-decoration: none;
 		color: gray;
 	}
-`;
-
-
-export const Warn = styled.i`
-	display: ${props=>props.window === "mobile" ? "none" : "inline-block"};
-	width: 200px;
-	color: red;
-	font-size: 1rem;
-	position: absolute;
-	top: -1.1rem;
-	font-weight: lighter;
 `;

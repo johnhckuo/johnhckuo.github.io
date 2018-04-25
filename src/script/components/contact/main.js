@@ -1,8 +1,8 @@
 import React from "react"
 import * as Style from "./style"
-import * as Global from "../global/style"
+import * as GlobalStyle from "../global/style"
 import firebase from "firebase"
-import HomeButton from "../global/HomeButton"
+import Container from "../global/Container"
 
 export default class Contact extends React.Component{
 	constructor(props){
@@ -18,8 +18,7 @@ export default class Contact extends React.Component{
 		this.state = {
 			email: true,
 			name: true,
-			message: true,
-			init: false
+			message: true
 		}
 	}
 
@@ -55,8 +54,8 @@ export default class Contact extends React.Component{
 	}
 
 	formSubmit(){
-		if (!this.validateInput("name", this.feedback.name) 
-			|| !this.validateInput("message", this.feedback.message) 
+		if (!this.validateInput("name", this.feedback.name)
+			|| !this.validateInput("message", this.feedback.message)
 			|| !this.validateInput("email", this.feedback.email)
 		){
 			alert("Oops, you've mis-filled some slots");
@@ -75,34 +74,34 @@ export default class Contact extends React.Component{
 
 	render(){
 		return(
-			<Global.Container type={this.props.width > Global.mobileWidth ? "small" : "large"} active={this.state.init}>
-
-				<HomeButton history={this.props.history} setActive={(init)=>this.setState({init})} />
-		        <Global.Title><h2>Any Message?</h2></Global.Title>
-		        <Global.HR />
+			<Container
+				type={this.props.width > GlobalStyle.mobileWidth ? "small" : "large"}
+				history={this.props.history}
+				FirstTitle = "Any Message?"
+			>
 		        <Style.FormContainer>
-			        <Style.Form window={this.props.width > Global.mobileWidth ? "laptop" : "mobile"}>
+			        <Style.Form window={this.props.width > GlobalStyle.mobileWidth ? "laptop" : "mobile"}>
 			            <div>
-			              <label><span>Name</span>{this.state.name ? null : <Style.Warn window={this.props.width > Global.mobileWidth ? "laptop" : "mobile"}>*Name missing</Style.Warn>}</label>
-			              <Style.Input type="text" name="name" onChange={this.updateFormData}/>
+			              <label><span>Name</span>{this.state.name ? null : <i>*Name missing</i>}</label>
+			              <input type="text" name="name" onChange={this.updateFormData}/>
 			            </div>
 			            <div>
-			              <label><span>Email</span>{this.state.email ? null : <Style.Warn window={this.props.width > Global.mobileWidth ? "laptop" : "mobile"}>*Invalid email</Style.Warn>}</label>
-			              <Style.Input type="text" name="email" onChange={this.updateFormData}/>
+			              <label><span>Email</span>{this.state.email ? null : <i>*Invalid email</i>}</label>
+			              <input type="text" name="email" onChange={this.updateFormData}/>
 			            </div>
 			            <div>
-			              <label><span>Message</span>{this.state.message ? null : <Style.Warn window={this.props.width > Global.mobileWidth ? "laptop" : "mobile"}>No message for me? :(</Style.Warn>}</label>
-			              <Style.Comment name="message" onChange={this.updateFormData}/>
+			              <label><span>Message</span>{this.state.message ? null : <i>No message for me? :(</i>}</label>
+			              <textarea name="message" onChange={this.updateFormData}/>
 			            </div>
 			            <div>
-			            	<Global.Btn onClick={this.formSubmit}>Send</Global.Btn>
+			            	<GlobalStyle.Btn onClick={this.formSubmit}>Send</GlobalStyle.Btn>
 			            </div>
 			        </Style.Form>
 		        </Style.FormContainer>
 		        <Style.EmailMe>Or, just email me directly at <a href="mailto:johnhckuo@gmail.com" target="_blank"><strong>johnhckuo@gmail.com</strong></a>.</Style.EmailMe>
 
 
-			</Global.Container>
+			</Container>
 		);
 	}
 
