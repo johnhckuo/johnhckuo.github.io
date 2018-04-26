@@ -1,6 +1,5 @@
 import styled from 'styled-components';
 
-
 function inputCommon() {
   return `
   	box-sizing: border-box;
@@ -34,7 +33,7 @@ export const Form = styled.div`
 	&>div{
 		display: flex;
 		margin-top: 5px;
-	    flex-direction: ${props=> props.window === "mobile" ? "column" : "row"};
+	    flex-direction: ${props=> props.device === "mobile" ? "column" : "row"};
 	    margin-top:25px;
 	    margin-bottom:25px;
 	}
@@ -61,7 +60,7 @@ export const Form = styled.div`
   }
 
   i{
-    display: ${props=>props.window === "mobile" ? "none" : "inline-block"};
+    display: ${props=>props.device === "mobile" ? "none" : "inline-block"};
     width: 200px;
     color: red;
     font-size: 1rem;

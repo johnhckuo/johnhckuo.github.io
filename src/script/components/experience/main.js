@@ -1,22 +1,21 @@
 import React from "react"
 import * as Style from "./style.js"
-import {mobileWidth} from "../global/style"
 import Experiences from "./data"
 import Container from "../global/Container"
 
 const Experience =(props)=>{
 	return (
 		<Container
-			type="large"
+			width="large"
 			history={props.history}
 			FirstTitle="Experience"
 			SecondTitle={<React.Fragment>Besides from my research, <br /> I&#39;ve applied interships in various industries in order to pursue my dream</React.Fragment>}
 		>
-			<Style.Timeline window={props.width > mobileWidth ? "laptop" : "mobile"}>
+			<Style.Timeline device={props.device}>
 				{
 					Experiences.map((experience, index)=>{
 						return (
-							<Style.Column key={index} window={props.width > mobileWidth ? "laptop" : "mobile"}>
+							<div key={index}>
 								<div>
 									<h2> <div>{experience.startDate} ─<br />{experience.endDate}</div> </h2>
 									<h1>{experience.title}</h1>
@@ -28,7 +27,7 @@ const Experience =(props)=>{
 										experience.description.map((content, index)=><p key={index}>● {content}</p>)
 									}
 								</div>
-							</Style.Column>
+							</div>
 						);
 					})
 				}

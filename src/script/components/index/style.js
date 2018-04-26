@@ -1,9 +1,8 @@
 import styled from 'styled-components'
-import {mobileWidth} from "../global/style"
 
 export const IndexContainer = styled.div`
   position: relative;
-  width: ${props=> props.width > mobileWidth ? "50%" : "100%"};
+  width: ${props=> props.device === "laptop" ? "50%" : "100%"};
   padding: 5%;
   display: block;
   background: rgba(1, 1, 1, 0);
@@ -46,7 +45,7 @@ export const Intro = styled.div`
   margin-right: auto;
   margin-left: auto;
   width: 80%;
-  height: ${props=> props.window === "mobile" ? "50%" : "35%"};
+  height: ${props=> props.device === "mobile" ? "50%" : "35%"};
   border-top: 1px solid #fff;
   border-bottom: 1px solid #fff;
   text-align: center;
@@ -80,7 +79,7 @@ export const Links = styled.div`
   margin-right: auto;
   margin-left: auto;
   margin-bottom: 5%;
-  width: ${props=>props.width > mobileWidth ? "100%" : "60%"};
+  width: ${props=> props.device === "laptop" ? "100%" : "60%"};
   text-align: center;
   &:before{
     content: '';
@@ -138,7 +137,7 @@ export const SocialIcon = styled.div`
     margin-right: 5px;
     margin-left: 5px;
     transition: color .5s;
-    width: ${ props=> props.width  > mobileWidth ? "35px" : "25%"};
+    width: ${ props=> props.device === "laptop" ? "35px" : "25%"};
     &:hover{
       color: #ffffff;
     }

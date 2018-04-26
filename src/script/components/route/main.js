@@ -2,7 +2,7 @@ import React from "react"
 import {Index, Aboutme, Contact, Experience, Portfolio} from "../"
 import { Router, Route, Switch, Redirect } from 'react-router-dom'
 import * as Style from "./style"
-import {Background} from "../global/style"
+import {Background, mobileWidth} from "../global/style"
 
 export default class Routes extends React.Component{
 
@@ -10,7 +10,7 @@ export default class Routes extends React.Component{
     super(props);
     this.updateWindowDimensions = this.updateWindowDimensions.bind(this);
     this.backgroundBlur = this.backgroundBlur.bind(this);
-    this.state = {init: false, blur: false, width: window.innerWidth, height: window.innerHeight};
+    this.state = {init: false, blur: false, device: null};
   }
 
   componentDidMount(){
@@ -35,7 +35,8 @@ export default class Routes extends React.Component{
   }
 
   updateWindowDimensions() {
-    this.setState({ width: window.innerWidth, height: window.innerHeight })
+    let device = window.innerWidth > mobileWidth ? "laptop" : "mobile";
+    this.setState({ device })
   }
 
   render(){
@@ -45,32 +46,32 @@ export default class Routes extends React.Component{
             <Switch>
                 <Route exact path="/" render={
                   props=>
-                    <Index {...props} blur={this.backgroundBlur} width={this.state.width} height={this.state.height } />
+                    <Index {...props} blur={this.backgroundBlur} device={this.state.device} />
                   }
                 />
                 <Route exact path="/aboutme" render={
                   props=>
-                    <Aboutme {...props} blur={this.backgroundBlur} width={this.state.width} height={this.state.height } />
+                    <Aboutme {...props} blur={this.backgroundBlur} device={this.state.device} />
                   }
                 />
                 <Route exact path="/experience" render={
                   props=>
-                    <Experience {...props} blur={this.backgroundBlur} width={this.state.width} height={this.state.height } />
+                    <Experience {...props} blur={this.backgroundBlur} device={this.state.device} />
                   }
                 />
                 <Route exact path="/portfolio" render={
                   props=>
-                    <Portfolio {...props} blur={this.backgroundBlur} width={this.state.width} height={this.state.height }/>
+                    <Portfolio {...props} blur={this.backgroundBlur} device={this.state.device} />
                   }
                 />
                 <Route exact path="/contact" render={
                   props=>
-                    <Contact {...props} blur={this.backgroundBlur} width={this.state.width} height={this.state.height }/>
+                    <Contact {...props} blur={this.backgroundBlur} device={this.state.device} />
                   }
                 />
                 <Route render={
                   props=>
-                    <GenericNotFound {...props} blur={this.backgroundBlur} width={this.state.width} height={this.state.height }/>
+                    <GenericNotFound {...props} />
                   }
                 />
             </Switch>

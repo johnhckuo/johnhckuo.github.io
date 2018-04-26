@@ -5,10 +5,10 @@ import { FaHome } from 'react-icons/lib/fa';
 export default class Container extends React.Component{
 	constructor(props){
 		super(props);
-    this.historyBack = this.historyBack.bind(this);
-    this.state={
-      init: false
-    }
+	    this.historyBack = this.historyBack.bind(this);
+	    this.state={
+	      init: false
+	    }
 	}
 
 
@@ -27,19 +27,19 @@ export default class Container extends React.Component{
 
 	render(){
 		return(
-				<ContainerStyle active={this.state.init} type={this.props.type}>
-          <HomeBtnStyle onClick = {this.historyBack} >
-  					<FaHome />
-  				</HomeBtnStyle>
-          <Title>
-            <h2>{this.props.FirstTitle}</h2>
-            <HR />
-						{
-							this.props.SecondTitle ? <h3>{this.props.SecondTitle}</h3> : null
-						}
-          </Title>
-					{this.props.children}
-				</ContainerStyle>
+			<ContainerStyle active={this.state.init} ContainerWidth={this.props.width}>
+	          	<HomeBtnStyle onClick = {this.historyBack} >
+	  				<FaHome />
+	  			</HomeBtnStyle>
+				<Title>
+					<h2>{this.props.FirstTitle}</h2>
+					<HR />
+					{
+						this.props.SecondTitle ? <h3>{this.props.SecondTitle}</h3> : null
+					}
+				</Title>
+				{this.props.children}
+			</ContainerStyle>
 		);
 	}
 

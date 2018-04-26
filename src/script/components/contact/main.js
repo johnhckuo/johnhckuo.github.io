@@ -1,6 +1,6 @@
 import React from "react"
 import * as Style from "./style"
-import {mobileWidth, Btn} from "../global/style"
+import {Btn} from "../global/style"
 import firebase from "firebase"
 import Container from "../global/Container"
 
@@ -75,12 +75,12 @@ export default class Contact extends React.Component{
 	render(){
 		return(
 			<Container
-				type={this.props.width > mobileWidth ? "small" : "large"}
+				width={this.props.device === "laptop" ? "small" : "large"}
 				history={this.props.history}
 				FirstTitle = "Any Message?"
 			>
 		        <Style.FormContainer>
-			        <Style.Form window={this.props.width > mobileWidth ? "laptop" : "mobile"}>
+			        <Style.Form device={this.props.device}>
 			            <div>
 			              <label><span>Name</span>{this.state.name ? null : <i>*Name missing</i>}</label>
 			              <input type="text" name="name" onChange={this.updateFormData}/>

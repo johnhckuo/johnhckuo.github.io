@@ -50,12 +50,12 @@ export const Background = styled.div`
 
 export const ContainerStyle = styled.div`
 	top: 15%;
-	left: ${props=> props.type === "small" ? "25%" : "10%"};
+	left: ${props=> props.ContainerWidth === "small" ? "25%" : "10%"};
 	margin-bottom: 15%;
 	position: absolute
 	margin-left: auto;
 	margin-right: auto;
-	width: ${props=> props.type === "small" ? "40%" : "70%"};
+	width: ${props=> props.ContainerWidth === "small" ? "40%" : "70%"};
 	padding: 5%;
 	display: block;
 	background-color: #fff;

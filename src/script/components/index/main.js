@@ -3,7 +3,6 @@ import { Link } from 'react-router-dom'
 import * as Style from "./style"
 import { FaGithubSquare, FaLinkedinSquare, FaFacebookSquare, FaGooglePlusSquare, FaEnvelopeSquare, FaSteamSquare } from 'react-icons/lib/fa';
 import myself from "../../../images/me.jpg"
-import {mobileWidth} from "../global/style"
 
 export default class Index extends React.Component{
 
@@ -28,22 +27,22 @@ export default class Index extends React.Component{
 
   render(){
     return(
-      <Style.IndexContainer width={this.props.width} active={this.state.init} >
+      <Style.IndexContainer device={this.props.device} active={this.state.init} >
         <Style.Icon>
           <img src={myself} alt="My selfie"/>
         </Style.Icon>
-        <Style.Intro active={this.state.init} window={this.props.width > mobileWidth ? "laptop" : "mobile"}>
+        <Style.Intro active={this.state.init} device={this.props.device}>
           <h1>John Kuo</h1>
           <Style.HR />
           <h2>Passionate Programmer / Amateur Gamer</h2>
         </Style.Intro>
-        <Style.Links width={this.props.width}>
+        <Style.Links device={this.props.device}>
           <Link to="/aboutme"><Style.Link firstLink={true}>About Me</Style.Link></Link>
           <Link to="/experience"><Style.Link>Experience</Style.Link></Link>
           <Link to="/portfolio"><Style.Link>Portfolio</Style.Link></Link>
           <Link to="/contact"><Style.Link lastLink={true}>Contact</Style.Link></Link>
         </Style.Links>
-        <Style.SocialIcon width={this.props.width}>
+        <Style.SocialIcon device={this.props.device}>
           <a rel="noopener" aria-label="github" name="github" href="https://github.com/johnhckuo" target="_blank"><FaGithubSquare /></a>
           <a rel="noopener" aria-label="linkedin" name="linkedin" href="https://www.linkedin.com/in/johnhckuo/" target="_blank"><FaLinkedinSquare /></a>
           <a rel="noopener" aria-label="facebook" name="facebook" href="https://www.facebook.com/johnhckuo" target="_blank"><FaFacebookSquare /></a>

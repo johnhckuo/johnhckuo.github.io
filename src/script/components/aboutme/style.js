@@ -34,7 +34,7 @@ export const Characteristic = styled.div`
 	margin-left: auto;
 	margin-right: auto;
 	margin-bottom: 30px;
-	width: ${props=> props.width};
+	width: ${props=> props.device === "laptop" ? "100%" : "50%"};
 	height: 20%;
 	display: flex;
 	flex-direction: row;
