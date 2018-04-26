@@ -21,7 +21,7 @@
     "url": "git+https://github.com/johnhckuo/johnhckuo.github.io"
   },
   "dependencies": {
-    "react": "^15.0.2"
+    "react": "^16.2.0"
   },
   "license": "MIT",
   "devDependencies": {

@@ -1,6 +1,6 @@
 import React from "react"
 import * as Style from "./style"
-import * as GlobalStyle from "../global/style"
+import {mobileWidth, Btn} from "../global/style"
 import firebase from "firebase"
 import Container from "../global/Container"
 
@@ -75,12 +75,12 @@ export default class Contact extends React.Component{
 	render(){
 		return(
 			<Container
-				type={this.props.width > GlobalStyle.mobileWidth ? "small" : "large"}
+				type={this.props.width > mobileWidth ? "small" : "large"}
 				history={this.props.history}
 				FirstTitle = "Any Message?"
 			>
 		        <Style.FormContainer>
-			        <Style.Form window={this.props.width > GlobalStyle.mobileWidth ? "laptop" : "mobile"}>
+			        <Style.Form window={this.props.width > mobileWidth ? "laptop" : "mobile"}>
 			            <div>
 			              <label><span>Name</span>{this.state.name ? null : <i>*Name missing</i>}</label>
 			              <input type="text" name="name" onChange={this.updateFormData}/>
@@ -94,7 +94,7 @@ export default class Contact extends React.Component{
 			              <textarea name="message" onChange={this.updateFormData}/>
 			            </div>
 			            <div>
-			            	<GlobalStyle.Btn onClick={this.formSubmit}>Send</GlobalStyle.Btn>
+			            	<Btn onClick={this.formSubmit}>Send</Btn>
 			            </div>
 			        </Style.Form>
 		        </Style.FormContainer>

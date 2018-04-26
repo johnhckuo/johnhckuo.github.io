@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom'
 import * as Style from "./style"
 import { FaGithubSquare, FaLinkedinSquare, FaFacebookSquare, FaGooglePlusSquare, FaEnvelopeSquare, FaSteamSquare } from 'react-icons/lib/fa';
 import myself from "../../../images/me.jpg"
-import * as Global from "../global/style"
+import {mobileWidth} from "../global/style"
 
 export default class Index extends React.Component{
 
@@ -32,7 +32,7 @@ export default class Index extends React.Component{
         <Style.Icon>
           <img src={myself} alt="My selfie"/>
         </Style.Icon>
-        <Style.Intro active={this.state.init} window={this.props.width > Global.mobileWidth ? "laptop" : "mobile"}>
+        <Style.Intro active={this.state.init} window={this.props.width > mobileWidth ? "laptop" : "mobile"}>
           <h1>John Kuo</h1>
           <Style.HR />
           <h2>Passionate Programmer / Amateur Gamer</h2>
