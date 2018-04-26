@@ -51,22 +51,22 @@ export default class Routes extends React.Component{
                 />
                 <Route exact path="/aboutme" render={
                   props=>
-                    <Aboutme {...props} blur={this.backgroundBlur} device={this.state.device} />
+                    <Aboutme {...props} device={this.state.device} />
                   }
                 />
                 <Route exact path="/experience" render={
                   props=>
-                    <Experience {...props} blur={this.backgroundBlur} device={this.state.device} />
+                    <Experience {...props} device={this.state.device} />
                   }
                 />
                 <Route exact path="/portfolio" render={
                   props=>
-                    <Portfolio {...props} blur={this.backgroundBlur} device={this.state.device} />
+                    <Portfolio {...props} />
                   }
                 />
                 <Route exact path="/contact" render={
                   props=>
-                    <Contact {...props} blur={this.backgroundBlur} device={this.state.device} />
+                    <Contact {...props} device={this.state.device} />
                   }
                 />
                 <Route render={
