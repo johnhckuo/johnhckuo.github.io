@@ -34,12 +34,12 @@ export const Characteristic = styled.div`
 	margin-left: auto;
 	margin-right: auto;
 	margin-bottom: 30px;
-	width: ${props=> props.device === "laptop" ? "100%" : "50%"};
+	width: ${props=> props.device === "laptop" ? "80%" : "50%"};
 	height: 20%;
 	display: flex;
 	flex-direction: row;
 	flex-wrap: wrap;
-	justify-content: center;
+	justify-content: space-around;
 	div{
 		display: flex;
 		flex-direction: column;
@@ -58,4 +58,3 @@ export const Characteristic = styled.div`
 	}
 
 `;
-

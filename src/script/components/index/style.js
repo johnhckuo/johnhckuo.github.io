@@ -6,12 +6,13 @@ export const IndexContainer = styled.div`
   padding: 5%;
   display: block;
   background: rgba(1, 1, 1, 0);
-  transition: all 0.5s;
+  transition: all 0.3s;
   transition-timing-function: ease-out;
   height: 60%;
   color: #ffffff;
   letter-spacing: 3px;
   margin-top: 2%;
+  opacity:${props=> props.active ? 1 : 0};
 `;
 
 export const Icon = styled.div`
@@ -50,7 +51,7 @@ export const Intro = styled.div`
   border-bottom: 1px solid #fff;
   text-align: center;
   transition: all 1s;
-  height: ${props=> props.active ? "" : "0px"};
+  height: ${props=> props.expand ? "" : "0px"};
   box-sizing: border-box;
   max-height: 40rem;
   overflow: hidden;
@@ -159,6 +160,3 @@ export const HR = styled.hr`
   margin-right: auto;
   background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.75), rgba(255, 255, 255, 0.1), rgba(0, 0, 0, 0));
 `;
-
-
-

@@ -22,6 +22,7 @@ export default class Container extends React.Component{
 	componentDidMount(){
 		setTimeout(()=>{
 			this.setState({init: true});
+			window.scrollTo(0, 0);
 		}, 500)
 	}
 
