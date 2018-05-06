@@ -1,6 +1,8 @@
 import React from "react"
 import {Index, Aboutme, Contact, Experience, Portfolio} from "../"
 import { Router, Route, Switch, Redirect } from 'react-router-dom'
+import ReactGA from 'react-ga';
+
 import * as Style from "./style"
 import {Background, mobileWidth} from "../global/style"
 
@@ -10,7 +12,9 @@ export default class Routes extends React.Component{
     super(props);
     this.updateWindowDimensions = this.updateWindowDimensions.bind(this);
     this.backgroundBlur = this.backgroundBlur.bind(this);
+    this.logPageView = this.logPageView.bind(this);
     this.state = {init: false, blur: false, device: null};
+    ReactGA.initialize('UA-108369170-1');
   }
 
   componentDidMount(){
@@ -39,10 +43,17 @@ export default class Routes extends React.Component{
     this.setState({ device })
   }
 
+  logPageView(){
+  		ReactGA.set({ page: window.location.hash });
+      ReactGA.pageview(window.location.hash);
+      return null;
+  };
+
   render(){
     return (
         <Style.RootContainer>
             <Background blur={this.state.blur} init={this.state.init}/>
+            <Route path="/" component={this.logPageView} />
             <Switch>
                 <Route exact path="/" render={
                   props=>
