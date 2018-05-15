@@ -134,11 +134,11 @@ export const SocialIcon = styled.div`
   flex-wrap: wrap;
   box-sizing: border-box;
   a{
-    color: #AAAAAA;
-    margin-right: 5px;
-    margin-left: 5px;
+    color: #BBBBBB;
+    margin-right: 10px;
+    margin-left: 10px;
     transition: color .5s;
-    width: ${ props=> props.device === "laptop" ? "35px" : "25%"};
+    width: ${ props=> props.device === "laptop" ? "45px" : "25%"};
     &:hover{
       color: #ffffff;
     }

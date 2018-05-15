@@ -1,5 +1,5 @@
 import React from "react"
-import {Index, Aboutme, Contact, Experience, Portfolio} from "../"
+import {Index, Aboutme, Experience, Portfolio, Blog} from "../"
 import { Router, Route, Switch, Redirect } from 'react-router-dom'
 import ReactGA from 'react-ga';
 
@@ -75,9 +75,9 @@ export default class Routes extends React.Component{
                     <Portfolio {...props} />
                   }
                 />
-                <Route exact path="/contact" render={
+                <Route exact path="/blog" render={
                   props=>
-                    <Contact {...props} device={this.state.device} />
+                    <Blog {...props} device={this.state.device} />
                   }
                 />
                 <Route render={
