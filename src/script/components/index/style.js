@@ -138,7 +138,7 @@ export const SocialIcon = styled.div`
     margin-right: 10px;
     margin-left: 10px;
     transition: color .5s;
-    width: ${ props=> props.device === "laptop" ? "45px" : "25%"};
+    width: ${ props=> props.device === "laptop" ? "40px" : "25%"};
     &:hover{
       color: #ffffff;
     }

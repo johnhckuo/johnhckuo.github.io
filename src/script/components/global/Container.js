@@ -11,7 +11,6 @@ export default class Container extends React.Component{
 	    }
 	}
 
-
 	historyBack(){
 		this.setState({init: false});
 		setTimeout(()=>{
