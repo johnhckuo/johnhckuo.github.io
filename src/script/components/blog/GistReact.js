@@ -2,43 +2,62 @@ import React from "react"
 import * as Style from "./style"
 import axios from "axios"
 import showdown from "showdown"
+import { Redirect, Link } from 'react-router-dom'
 
 export default class GistReact extends React.Component{
 	constructor(props){
 		super(props);
-		this.state = {username : null, gistList: [], publicOnly: false, isReading: false, isLoading: "true", blogContent: null}
+		this.state = {
+			username : null,
+			gistList: [],
+			publicOnly: false,
+			isReading: false,
+			isLoading: "true",
+			blogContent: null,
+			blogId: null,
+			redirect: false
+		}
 		this.root = "https://api.github.com";
 		this.fetchGistList = this.fetchGistList.bind(this);
 		this.UTCtoLocaleTime = this.UTCtoLocaleTime.bind(this);
-		this.readMore = this.readMore.bind(this);
+		this.fetchGist = this.fetchGist.bind(this);
 	}
 
 	static getDerivedStateFromProps(nextProps, prevState){
 		if (nextProps.username !== prevState.username){
 			return {username: nextProps.username, publicOnly: nextProps.publicOnly};
 		}
+		if (nextProps.blogId !== prevState.blogId){
+			return {blogId: nextProps.blogId}
+		}
 		return null;
 	}
 
 	componentDidMount(){
-		this.fetchGistList();
+		if (this.state.blogId !== null){
+			this.fetchGist(this.state.blogId);
+		}else{
+			this.fetchGistList();
+		}
 	}
 
 	componentDidUpdate(prevProps, prevState){
 		if (prevState.username !== this.state.username){
 			this.fetchGistList();
 		}
+		if (prevState.blogId !== this.state.blogId){
+			this.fetchGist(this.state.blogId);
+		}
 	}
 
 	fetchGistList(){
 		axios.get(`${this.root}/users/${this.state.username}/gists`)
 		.then((response)=>{
-			console.log(response.data)
 			this.setState({gistList: response.data, isLoading: false})
 		})
 		.catch((error)=>{
 			alert("Oops! Something went wrong :(");
-			console.log(error);
+			this.setState({ redirect: true });
 		})
 	}
 
@@ -47,43 +66,47 @@ export default class GistReact extends React.Component{
 		return date.getFullYear() + "." + (date.getMonth() + 1) + "." + date.getDate();
 	}
 
-	readMore(URI){
-		this.setState({isReading: true, isLoading: true});
-		axios.get(`${URI}`)
+	fetchGist(blogId){
+		var gistURI = `https://gist.githubusercontent.com/${this.state.username}/${blogId}/raw`;
+		this.setState({isReading: true, isLoading: true, blogId});
+		axios.get(`${gistURI}`)
 		.then((response)=>{
 			var converter = new showdown.Converter();
-		    var blogContent = converter.makeHtml(response.data);
-			this.setState({isReading: true, isLoading: false, blogContent: blogContent});
+		  var blogContent = converter.makeHtml(response.data);
+			this.setState({isReading: true, isLoading: false, blogContent});
 		})
 		.catch((error)=>{
-			alert("Oops! Something went wrong :(");
-			console.log(error);
+			alert("Oops! The blog cannot be found :(");
+			this.setState({ redirect: true })
 		})
 	}
 
 	render(){
-		var gistList = [];
-		for (var i = 0 ; i < this.state.gistList.length ; i++){
-			let gist = this.state.gistList[i];
-			if (this.state.publicOnly && !gist.public){
+		const {redirect, gistList, publicOnly, isLoading, isReading, blogContent} = this.state;
+		if (redirect) {
+			return <Redirect to='/'/>;
+		}
+		var gists = [];
+		for (var i = 0 ; i < gistList.length ; i++){
+			let gist = gistList[i];
+			if (publicOnly && !gist.public){
 				continue;
 			}
-			let gistURI = gist.files[Object.keys(gist.files)[0]].raw_url;
-			gistList.push(<li key={gist.id}>
-				{Object.keys(gist.files)[0]}
-				date: {this.UTCtoLocaleTime(gist.created_at)}
-				<div onClick={() => this.readMore(gistURI)}>
-				Read more
-				</div>
-				</li>); 
+			gists.push(
+				<li key={gist.id}>
+					{Object.keys(gist.files)[0]}
+					date: {this.UTCtoLocaleTime(gist.created_at)}
+					<Link to={`/blog/${gist.id}`}>Read more</Link>
+				</li>
+			);
 		}
 		return(
 			<React.Fragment>
-				<Style.Loading isLoading={this.state.isLoading}/>
-				{this.state.isReading ? (
-					<GistReader blogContent = {this.state.blogContent}/>
+				<Style.Loading isLoading={isLoading}/>
+				{isReading ? (
+					<GistReader blogContent = {blogContent}/>
 					) : (
-					<ul>{ gistList }</ul>
+					<ul>{ gists }</ul>
 				)}
 			</React.Fragment>
 		);
@@ -94,6 +117,4 @@ const GistReader = (props)=>{
 	return (
 		<div dangerouslySetInnerHTML={{__html: props.blogContent}}></div>
 		);
-
-
 }

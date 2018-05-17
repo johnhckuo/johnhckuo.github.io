@@ -75,7 +75,7 @@ export default class Routes extends React.Component{
                     <Portfolio {...props} />
                   }
                 />
-                <Route exact path="/blog" render={
+                <Route exact path="/blog/:id?" render={
                   props=>
                     <Blog {...props} device={this.state.device} />
                   }

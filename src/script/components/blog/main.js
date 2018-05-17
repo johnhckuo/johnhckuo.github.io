@@ -6,10 +6,14 @@ import GistReact from "./GistReact"
 export default class Blog extends React.Component{
 	constructor(props){
 		super(props);
-		this.state = {username: "johnhckuo"}
+		this.state = {username: "johnhckuo", blogId: null}
 	}
 
-	componentDidMount(){
+	static getDerivedStateFromProps(nextProps, prevState){
+		if (typeof nextProps.match.params.id !== "undefined"){
+			return {blogId: nextProps.match.params.id};
+		}
+		return null;
 	}
 
 	render(){
@@ -20,7 +24,7 @@ export default class Blog extends React.Component{
 				FirstTitle = "Blog"
         SecondTitle = "I write to make sense of the world"
 			>
-				<GistReact username={this.state.username} publicOnly="true"/>
+				<GistReact blogId={this.state.blogId} username={this.state.username} publicOnly="true"/>
 			</Container>
 		);
 	}
