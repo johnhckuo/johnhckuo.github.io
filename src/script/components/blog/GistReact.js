@@ -3,6 +3,7 @@ import * as Style from "./style"
 import axios from "axios"
 import showdown from "showdown"
 import { Redirect, Link } from 'react-router-dom'
+import { HR } from "../global/style"
 
 export default class GistReact extends React.Component{
 	constructor(props){
@@ -24,10 +25,11 @@ export default class GistReact extends React.Component{
 	}
 
 	static getDerivedStateFromProps(nextProps, prevState){
-		if (nextProps.username !== prevState.username){
+		if (prevState.isReading){
+			return {isReading: false, blogId: null, blogContent: null}
+		}else if (nextProps.username !== prevState.username){
 			return {username: nextProps.username, publicOnly: nextProps.publicOnly};
-		}
-		if (nextProps.blogId !== prevState.blogId){
+		}else if (nextProps.blogId !== prevState.blogId){
 			return {blogId: nextProps.blogId}
 		}
 		return null;
@@ -45,7 +47,7 @@ export default class GistReact extends React.Component{
 		if (prevState.username !== this.state.username){
 			this.fetchGistList();
 		}
-		if (prevState.blogId !== this.state.blogId){
+		if (prevState.blogId !== this.state.blogId && this.state.blogId !== null){
 			this.fetchGist(this.state.blogId);
 		}
 	}
@@ -63,7 +65,14 @@ export default class GistReact extends React.Component{
 
 	UTCtoLocaleTime(UTC) {
 		var date = new Date(UTC);
-		return date.getFullYear() + "." + (date.getMonth() + 1) + "." + date.getDate();
+	    var hours = date.getHours();
+	    var minutes = date.getMinutes();
+	    var ampm = hours >= 12 ? 'pm' : 'am';
+	    hours = hours % 12;
+	    hours = hours ? hours : 12; // the hour '0' should be '12'
+	    minutes = minutes < 10 ? '0' + minutes : minutes;
+	    var strTime = hours + ':' + minutes + ' ' + ampm;
+		return date.getFullYear() + "/" + (date.getMonth() + 1) + "/" + date.getDate() + "  " + strTime;
 	}
 
 	fetchGist(blogId){
@@ -72,7 +81,7 @@ export default class GistReact extends React.Component{
 		axios.get(`${gistURI}`)
 		.then((response)=>{
 			var converter = new showdown.Converter();
-		  var blogContent = converter.makeHtml(response.data);
+		  	var blogContent = converter.makeHtml(response.data);
 			this.setState({isReading: true, isLoading: false, blogContent});
 		})
 		.catch((error)=>{
@@ -94,9 +103,10 @@ export default class GistReact extends React.Component{
 			}
 			gists.push(
 				<li key={gist.id}>
-					{Object.keys(gist.files)[0]}
-					date: {this.UTCtoLocaleTime(gist.created_at)}
-					<Link to={`/blog/${gist.id}`}>Read more</Link>
+					<Style.Title>{Object.keys(gist.files)[0].split(".")[0]}</Style.Title>
+					<Style.Description>{gist.description}</Style.Description>
+					<Style.Date>Written at {this.UTCtoLocaleTime(gist.created_at)}</Style.Date>
+					<Style.Link><Link to={`/blog/${gist.id}`}>Read more</Link></Style.Link>
 				</li>
 			);
 		}
@@ -106,7 +116,7 @@ export default class GistReact extends React.Component{
 				{isReading ? (
 					<GistReader blogContent = {blogContent}/>
 					) : (
-					<ul>{ gists }</ul>
+					<Style.ul>{ gists }</Style.ul>
 				)}
 			</React.Fragment>
 		);

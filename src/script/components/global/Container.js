@@ -1,6 +1,6 @@
 import React from "react"
 import {ContainerStyle, HomeBtnStyle, Title, HR} from "./style"
-import { FaHome } from 'react-icons/lib/fa';
+import { FaArrowLeft } from 'react-icons/lib/fa';
 
 export default class Container extends React.Component{
 	constructor(props){
@@ -15,6 +15,11 @@ export default class Container extends React.Component{
 		this.setState({init: false});
 		setTimeout(()=>{
 			this.props.history.goBack();
+			var re = /^\/blog\/(?=.*\w).+$/;
+			if (re.test(this.props.history.location.pathname)){
+				this.setState({init: true});
+				window.scrollTo(0, 0);
+			}
 		}, 500)
 	}
 
@@ -29,7 +34,7 @@ export default class Container extends React.Component{
 		return(
 			<ContainerStyle active={this.state.init} ContainerWidth={this.props.width}>
 	          	<HomeBtnStyle onClick = {this.historyBack} >
-	  				<FaHome />
+	  				<FaArrowLeft />
 	  			</HomeBtnStyle>
 				<Title>
 					<h2>{this.props.FirstTitle}</h2>

@@ -22,7 +22,7 @@ export default class Blog extends React.Component{
 				width={this.props.device === "laptop" ? "small" : "large"}
 				history={this.props.history}
 				FirstTitle = "Blog"
-        SecondTitle = "I write to make sense of the world"
+        		SecondTitle = "I write to make sense of the world"
 			>
 				<GistReact blogId={this.state.blogId} username={this.state.username} publicOnly="true"/>
 			</Container>
