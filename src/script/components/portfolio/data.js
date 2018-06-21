@@ -9,7 +9,19 @@ const Portfolios = [
     keywords:["Ethereum", "Solidity", "Javascript"],
     link:"https://blockfarm.herokuapp.com/",
     icon:"FaBitcoin"
-  },{
+  },
+  {
+    title: "NBA Line Chatbot",
+    description: [
+      "A line chatbot built to report NBA live stats.",
+      "Support team subscription, team roster lookup, playoffs schedule, game result lookup.",
+      "Also support team leaders lookup & player stats lookup."
+    ],
+    keywords:["Chatbot", "Express", "Node.js"],
+    link:"https://github.com/johnhckuo/NBA-Chatbot",
+    icon:"FaCommentsO"
+  },
+  {
     title: "Minecraft",
     description:[
       "Simulate terrain generation and day/night transition in Minecraft.",
