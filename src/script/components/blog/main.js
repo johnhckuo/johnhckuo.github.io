@@ -19,7 +19,7 @@ export default class Blog extends React.Component{
 	render(){
 		return(
 			<Container
-				width={this.props.device === "laptop" ? "small" : "large"}
+				width="large"
 				history={this.props.history}
 				FirstTitle = "Blog"
         		SecondTitle = "I write to make sense of the world"
