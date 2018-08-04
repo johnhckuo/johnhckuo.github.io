@@ -3,17 +3,18 @@ const Experiences = [
 		title:"Blockchain Software Engineer",
 		company: "IBM Singapore",
 		startDate: "2018.11",
-		endDate: " now",
+		endDate: " unknown",
 		description:[
-			"Collaborate with other engineers and management to help design interoperability between public blockchain platforms including Ethereum, Bitcoin, Stellar, and enterprise platforms like Hyperledger Fabric, Burrow etc.",
-			"Design and implementation of low-latency, high-availability, and performant applications",
-			"Implement security and data protection schemes, such as PKCS#11 and other PKI systems"
+			// "Collaborate with other engineers and management to help design interoperability between public blockchain platforms including Ethereum, Bitcoin, Stellar, and enterprise platforms like Hyperledger Fabric, Burrow etc.",
+			// "Design and implementation of low-latency, high-availability, and performant applications",
+			// "Implement security and data protection schemes, such as PKCS#11 and other PKI systems"
+			"Starting in Nov 2018. Can’t wait!"
 		],
 		logo: "ibm.jpg"	
 	},
 	{
 		title:"VR Service Developer Intern",
-		company: "HTC Vive",
+		company: "HTC VIVE",
 		startDate: "2017.03",
 		endDate: " 2017.08",
 		description:[
