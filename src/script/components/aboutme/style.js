@@ -12,6 +12,7 @@ export const Banner = styled.div`
 	top: 0px;
 	overflow: hidden;
 	border-radius: 10px;
+	margin-top: 3%;
 	margin-bottom: 20px;
 	height: 100%;
 	img{

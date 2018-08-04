@@ -36,7 +36,7 @@ export const Icon = styled.div`
     bottom: 0px;
     left: calc(50% - 1px);
     width: 1px;
-    height: calc(3.5rem + 1px);
+    height: calc(2.5rem + 1px);
     background: #ffffff;
   }
 `;
@@ -89,7 +89,7 @@ export const Links = styled.div`
     top: 0px;
     left: calc(50% - 1px);
     width: 1px;
-    height: calc(3.5rem + 1px);
+    height: calc(2.5rem + 1px);
     background: #ffffff;
     box-sizing: border-box;
   }

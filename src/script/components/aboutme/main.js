@@ -9,7 +9,7 @@ const Aboutme = (props)=>{
 	return(
 		<Container
 			width="large"
-			FirstTitle="Hello"
+			FirstTitle="Hello!"
 			SecondTitle={<React.Fragment>I am John Kuo! <br /> And this is me in Abisko. <FaSmileO /></React.Fragment>}
 			history={props.history}
 		>

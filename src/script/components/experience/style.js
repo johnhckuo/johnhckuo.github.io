@@ -2,7 +2,7 @@ import styled from 'styled-components'
 
 export const Timeline = styled.div`
 	position: relative;
-	padding: 40px 0px;
+	padding: 10px 0px;
 	width: 80%;
 	margin-left: 10%;
 	margin-bottom: 40px;
@@ -55,6 +55,7 @@ export const Timeline = styled.div`
 
 
 			h3{
+				font-weight: bold;
 				margin-top:10px;
 				color: gray;
 			}
@@ -63,8 +64,7 @@ export const Timeline = styled.div`
 			position: relative;
 			border-left: 1px solid #000;
 			p{
-				font-size: 1rem;
-				line-height: 20px;
+				line-height: 1.5rem;
 				margin-left: 20px;
 				margin-top: 10px;
 			}

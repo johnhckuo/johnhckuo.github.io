@@ -7,6 +7,7 @@ export const Filter = styled.div`
 	justify-content: center;
 	align-items: center;
 	margin-bottom: 20px;
+	margin-top: 3%;
 `;
 
 export const FilterInput = styled.input.attrs({

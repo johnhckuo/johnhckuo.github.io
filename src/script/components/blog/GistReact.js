@@ -125,6 +125,6 @@ export default class GistReact extends React.Component{
 
 const GistReader = (props)=>{
 	return (
-		<div dangerouslySetInnerHTML={{__html: props.blogContent}}></div>
+		<div className="blogContent" dangerouslySetInnerHTML={{__html: props.blogContent}}></div>
 		);
 }

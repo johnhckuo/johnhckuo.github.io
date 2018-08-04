@@ -9,7 +9,7 @@ const Experience =(props)=>{
 			width="large"
 			history={props.history}
 			FirstTitle="Experience"
-			SecondTitle={<React.Fragment>Besides from my research, <br /> I&#39;ve applied interships in various industries in order to pursue my dream</React.Fragment>}
+			SecondTitle={<React.Fragment>“ Find a job you enjoy doing, <br />and you will never have to work a day in your life. ” <br /> -Mark Twain</React.Fragment>}
 		>
 			<Style.Timeline device={props.device}>
 				{

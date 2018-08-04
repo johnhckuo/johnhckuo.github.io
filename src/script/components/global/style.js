@@ -71,7 +71,6 @@ export const ContainerStyle = styled.div`
 `;
 
 export const Title = styled.div`
-	margin-bottom: 3%;
 	text-align: center;
 
 	h2{
@@ -80,9 +79,10 @@ export const Title = styled.div`
 		font-weight:bold;
 	}
 	h3{
-		font-size: 1.5rem;
+		font-size: 1.2rem;
 		font-style: italic;
 		color: gray;
+		line-height: 1.5rem;
 	}
 `;
 
