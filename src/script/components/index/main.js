@@ -1,7 +1,7 @@
 import React from "react"
 import { Link } from 'react-router-dom'
 import * as Style from "./style"
-import { FaGithubSquare, FaLinkedinSquare, FaFacebookSquare, FaGooglePlusSquare, FaEnvelopeSquare, FaSteamSquare } from 'react-icons/lib/fa';
+import { FaGithubSquare, FaLinkedin, FaEnvelopeSquare, FaSteamSquare } from 'react-icons/fa';
 import myself from "../../../images/me.jpg"
 
 export default class Index extends React.Component{
@@ -51,7 +51,7 @@ export default class Index extends React.Component{
         </Style.Links>
         <Style.SocialIcon device={this.props.device}>
           <a rel="noopener" aria-label="github" name="github" href="https://github.com/johnhckuo" target="_blank"><FaGithubSquare /></a>
-          <a rel="noopener" aria-label="linkedin" name="linkedin" href="https://www.linkedin.com/in/johnhckuo/" target="_blank"><FaLinkedinSquare /></a>
+          <a rel="noopener" aria-label="linkedin" name="linkedin" href="https://www.linkedin.com/in/johnhckuo/" target="_blank"><FaLinkedin /></a>
           <a rel="noopener" aria-label="email" name="email" href="mailto:johnhckuo@gmail.com" target="_blank"><FaEnvelopeSquare /></a>
           <a rel="noopener" aria-label="steam" name="steam" href="https://steamcommunity.com/id/johnhckuo/" target="_blank"><FaSteamSquare /></a>
         </Style.SocialIcon>

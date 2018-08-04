@@ -1,6 +1,6 @@
 import React from "react"
 import * as Style from "./style.js"
-import * as FontAwesome from 'react-icons/lib/fa'
+import * as FontAwesome from 'react-icons/fa'
 import Portfolios from "./data"
 import Container from "../global/Container"
 

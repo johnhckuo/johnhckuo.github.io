@@ -1,6 +1,6 @@
 import React from "react"
 import * as Style from "./style"
-import {FaAmericanSignLanguageInterpreting, FaCode, FaHeartO, FaSmileO } from 'react-icons/lib/fa';
+import {FaAmericanSignLanguageInterpreting, FaCode, FaHeart, FaSmile } from 'react-icons/fa';
 import myself from "../../../images/aboutme_cover.jpg"
 import {HR} from "../global/style"
 import Container from "../global/Container"
@@ -10,7 +10,7 @@ const Aboutme = (props)=>{
 		<Container
 			width="large"
 			FirstTitle="Hello!"
-			SecondTitle={<React.Fragment>I am John Kuo! <br /> And this is me in Abisko. <FaSmileO /></React.Fragment>}
+			SecondTitle={<React.Fragment>I am John Kuo! <br /> And this is me in Abisko. <FaSmile /></React.Fragment>}
 			history={props.history}
 		>
 			<Style.Banner>
@@ -22,7 +22,7 @@ const Aboutme = (props)=>{
 						<Style.Characteristic device={props.device}>
 							<div><FaAmericanSignLanguageInterpreting />I&#39;m a team player</div>
 							<div><FaCode />I got mad skills</div>
-							<div><FaHeartO />I am passionate</div>
+							<div><FaHeart />I am passionate</div>
 						</Style.Characteristic>
 						I am a graduate of the MIS department in National Chengchi University.<br />
 						I hold over 7 years of programming experience. <br />

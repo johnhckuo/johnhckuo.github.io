@@ -27,6 +27,11 @@ body{
      top: 10px;
      left: 10px;
 }
+
+.blogContent{
+	margin-top: 3%;
+}
+
 .blogContent pre{
     padding: 16px;
      overflow: auto;

@@ -24,7 +24,7 @@ export default class Blog extends React.Component{
 				FirstTitle = "Blog"
         		SecondTitle = "I write to make sense of the world"
 			>
-				<GistReact blogId={this.state.blogId} username={this.state.username} publicOnly="true"/>
+				<GistReact blogId={this.state.blogId} username={this.state.username} history={this.props.history} publicOnly="true"/>
 			</Container>
 		);
 	}

@@ -19,7 +19,7 @@ const Portfolios = [
     ],
     keywords:["Chatbot", "Express", "Node.js"],
     link:"https://github.com/johnhckuo/NBA-Chatbot",
-    icon:"FaCommentsO"
+    icon:"FaComments"
   },
   {
     title: "Minecraft",
@@ -76,7 +76,7 @@ const Portfolios = [
     ],
     keywords:["HTML5", "Canvas"],
     link:"https://johnhckuo.github.io/Gomoku/",
-    icon:"FaCircleO"
+    icon:"FaCircle"
   },{
     title:"Fitness Club Page",
     description:[
@@ -108,12 +108,6 @@ const Portfolios = [
     keywords: ["CSS", "Javascript", "HTML5"],
     link:"http://johnhckuo.github.io/CSS3D_Carousel/",
     icon:"FaImage"
-  },{
-    title: "Fireflies Simulator",
-    description: ["Simulate fireflies flying route and handle the transform of light."],
-    keywords: ["Three.js", "WebGL", "Javascript"],
-    link:"http://johnhckuo.github.io/Fireflies/",
-    icon:"FaBug"
   },{
     title:"Oraclize Tutorial",
     description:[
@@ -150,16 +144,7 @@ const Portfolios = [
     ],
     keywords: ["D3.js", "Ajax", "Canvas.js"],
     link:"http://johnhckuo.github.io/Taiwan_RealTime_Disaster/",
-    icon:"FaBarChart"
-  },
-  {
-    title: "Shaders",
-    description:[
-      "Some interesting shader applications."
-    ],
-    keywords:["Shader", "WebGL", "Javascript"],
-    link:"https://johnhckuo.github.io/Shader-Projects/",
-    icon:"FaCube"
+    icon:"FaChartBar"
   },
   {
     title: "Web-based AR Tag Detector",
@@ -171,6 +156,32 @@ const Portfolios = [
     link:"https://github.com/johnhckuo/WebAR",
     icon:"FaEye"
   },
+  {
+    title: "Line Today",
+    description:[
+      "Adding some new improvements to Line Today news page using react",
+      "Improve user browsing experiences with sub-categories bar, responsive design, and single page application design"
+    ],
+    keywords:["React.js", "SCSS", "Javascript"],
+    link:"https://johnhckuo.github.io/Line-Today/#/",
+    icon:"FaNewspaper"
+  },
+  {
+    title: "GLSL Shaders",
+    description:[
+      "Some interesting shader applications."
+    ],
+    keywords:["Shader", "WebGL", "Javascript"],
+    link:"https://johnhckuo.github.io/Shader-Projects/",
+    icon:"FaCubes"
+  },
+  {
+    title: "Fireflies Simulator",
+    description: ["Simulate fireflies flying route and handle the transform of light."],
+    keywords: ["Three.js", "WebGL", "Javascript"],
+    link:"http://johnhckuo.github.io/Fireflies/",
+    icon:"FaBug"
+  }
 
 ]
 

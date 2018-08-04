@@ -1,6 +1,6 @@
 import React from "react"
 import {ContainerStyle, HomeBtnStyle, Title, HR} from "./style"
-import { FaArrowLeft } from 'react-icons/lib/fa';
+import { FaArrowLeft } from 'react-icons/fa';
 
 export default class Container extends React.Component{
 	constructor(props){

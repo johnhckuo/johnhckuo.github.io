@@ -25,7 +25,7 @@ export default class GistReact extends React.Component{
 	}
 
 	static getDerivedStateFromProps(nextProps, prevState){
-		if (prevState.isReading){
+		if (prevState.isReading && nextProps.history.location.pathname === "/blog"){
 			return {isReading: false, blogId: null, blogContent: null}
 		}else if (nextProps.username !== prevState.username){
 			return {username: nextProps.username, publicOnly: nextProps.publicOnly};
