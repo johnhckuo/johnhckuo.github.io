@@ -1,8 +1,12 @@
 import React from "react"
-import {Index, Aboutme, Experience, Portfolio, Blog} from "../"
 import { Router, Route, Switch, Redirect } from 'react-router-dom'
 import ReactGA from 'react-ga';
 
+import Aboutme from "../aboutme/main"
+import Portfolio from "../portfolio/main"
+import Experience from "../experience/main"
+import Blog from "../blog/main"
+import Index from "../index/main"
 import * as Style from "./style"
 import {Background, mobileWidth} from "../global/style"
 

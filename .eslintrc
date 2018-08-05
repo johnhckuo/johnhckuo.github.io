@@ -1,20 +1,8 @@
 {
-  "env": {
-    "node": true
-  },
-  ecmaFeatures: {
-    jsx: true
-  },
-  "globals": {
-  },
+  parser: "babel-eslint",
   "plugins": [
+    "react"
   ],
-  "extends": "eslint-config-airbnb",
-  "rules": {
-    "comma-dangle": 0,
-    "no-console": 0,
-    "id-length": 0,
-    "react/prop-types": 1,
-    "react/prefer-stateless-function": 0
-  }
+  "env": { "browser": true, "amd": true, "es6": true, "commonjs": true,},
+  "extends": ["plugin:react/recommended"]
 }

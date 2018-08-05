@@ -31,10 +31,10 @@ const Aboutme = (props)=>{
 						I&#39;ve received my master degree in July, 2017. <br />
 						My research is based on blockchain, and I&#39;ve proposed a method to facilitate
 						the design of a blockchain-based ecosystem toward success and to make it self-sustaining. <br />
-						And I&#39;ve built a web-based farming game called <a target="_blank" rel="noopener" aria-label="blockfarm" name="blockfarm" href="https://github.com/johnhckuo/Block-Farm">Blockfarm</a> that allows users to trade with multiple users at the same time! <br />
+						In the meanwhile, I&#39;ve also built a web-based farming game called <a target="_blank" rel="noopener" aria-label="blockfarm" name="blockfarm" href="https://github.com/johnhckuo/Block-Farm">Blockfarm</a> that allows users to trade with multiple users at the same time! <br />
 						What make this game so special are that:
 						<ul>
-							<li>All the trading process and results will be recored on Ethereum blockchain.</li>
+							<li>All the trading process and results will be recorded on Ethereum.</li>
 							<li>Players can choose to play as a thief to steal other farmers&#39; crops, or to play as cop to guard the farmers.</li>
 							<li>Farmers can have a multi-party transaction with other players. It means that if A got what B wants, B got what C wants, and C got what A wants, then a transaction consists of A → B → C → A will be established.</li>
 						</ul>

@@ -14,7 +14,7 @@ cd johnhckuo.github.io
 npm install
 
 # build and run locally
-npm run start
+npm run dev
 
 ```
 ## Powered by

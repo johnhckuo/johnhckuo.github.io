@@ -136,7 +136,7 @@ const Portfolios = [
     link:"https://github.com/johnhckuo/Insurance-Smart-Contract",
     icon:"FaBitcoin"
   },{
-    title: "Real-time Disaster Visualizer",
+    title: "Disaster Visualizer",
     description: [
       "Fetch the open data released by government and visualize these data for greater convenience(D3.js、C3.js、Canvas.js). ",
       "Using Ajax to dynamically updating disaster data. ",
@@ -147,7 +147,7 @@ const Portfolios = [
     icon:"FaChartBar"
   },
   {
-    title: "Web-based AR Tag Detector",
+    title: "AR Tag Detector",
     description:[
       "Building a web-based AR App by using Twisted Web Socket, Python, OpenCV, and Three.js.",
       "App will identify some certain patterns and render corresponding 3D object on certain points."
