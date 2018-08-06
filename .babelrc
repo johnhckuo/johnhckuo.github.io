@@ -1,11 +1,3 @@
 {
-  "presets": [
-    ["env", {
-      "targets": {
-        "node": "current",
-        "uglify": true
-      }
-    }],
-    "react"
-  ]
+  "presets": ["env", "react"]
 }

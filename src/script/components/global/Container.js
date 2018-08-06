@@ -1,5 +1,5 @@
 import React from "react"
-import {ContainerStyle, HomeBtnStyle, Title, HR} from "./style"
+import {ContainerStyle, HomeBtnStyle, Title, HR, H3} from "./style"
 import { FaArrowLeft } from 'react-icons/fa';
 
 export default class Container extends React.Component{
@@ -20,14 +20,14 @@ export default class Container extends React.Component{
 				this.setState({init: true});
 				window.scrollTo(0, 0);
 			}
-		}, 500)
+		}, 650)
 	}
 
 	componentDidMount(){
 		setTimeout(()=>{
 			this.setState({init: true});
 			window.scrollTo(0, 0);
-		}, 500)
+		}, 650)
 	}
 
 	render(){
@@ -40,7 +40,7 @@ export default class Container extends React.Component{
 					<h2>{this.props.FirstTitle}</h2>
 					<HR />
 					{
-						this.props.SecondTitle ? <h3>{this.props.SecondTitle}</h3> : null
+						this.props.SecondTitle ? <H3>{this.props.SecondTitle}</H3> : null
 					}
 				</Title>
 				{this.props.children}

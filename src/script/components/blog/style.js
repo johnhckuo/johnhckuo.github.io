@@ -8,7 +8,6 @@ const spin = keyframes`
 export const Loading = styled.div`
 	position:absolute; 
 	border: 5px solid #f3f3f3; 
-	-webkit-animation: ${spin} 1s linear infinite; 
 	animation: ${spin} 1s linear infinite; 
 	border-top: 5px solid #555; 
 	border-radius: 50%; 
@@ -53,18 +52,23 @@ export const Title = styled.div`
 export const Description = styled.div`
 	color: #666666;
 	width: 80%;
+	font-style: italic;
 `;
 
 export const Date = styled.div`
 	color: #666666;
+	font-style: italic;
 `;
 
 export const ul = styled.ul`
+	display: flex;
+	flex-direction: column;
+	align-items: center;
 	li{
 		position: relative;
 		display: flex;
 		flex-direction: column;
-		width: 100%;
+		width: 80%;
 		padding-top: 25px;
 		padding-bottom: 15px;
 		box-sizing: border-box;
@@ -78,10 +82,7 @@ export const ul = styled.ul`
 			left: 0; 
 			height: 1px; 
 			width: 100%;
-			background-image: -webkit-gradient(linear, 0 0, 100% 0, from(#555), to(transparent));
-			background-image: -webkit-linear-gradient(left, #555, transparent);
-			background-image: -moz-linear-gradient(left, #555, transparent);
-			background-image: -o-linear-gradient(left, #555, transparent);
+			background-image: linear-gradient(to right, #555, transparent);
 		}
 	}
 

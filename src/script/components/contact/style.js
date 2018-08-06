@@ -3,15 +3,9 @@ import styled from 'styled-components';
 function inputCommon() {
   return `
   	box-sizing: border-box;
-  	-webkit-box-sizing: border-box;
-  	-moz-box-sizing: border-box;
   	border: 1px solid #C2C2C2;
   	box-shadow: 1px 1px 4px #EBEBEB;
-  	-moz-box-shadow: 1px 1px 4px #EBEBEB;
-  	-webkit-box-shadow: 1px 1px 4px #EBEBEB;
   	border-radius: 3px;
-  	-webkit-border-radius: 3px;
-  	-moz-border-radius: 3px;
   	padding: 7px;
   	outline: none;
     width: 100%;

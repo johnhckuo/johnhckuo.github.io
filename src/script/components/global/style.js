@@ -4,20 +4,11 @@ import background from '../../../images/background.jpg'
 function blur(isBlur){
 	if (isBlur){
 		return `
-			-moz-transform: scale(1.1825);
-		    -webkit-transform: scale(1.1825);
-		    -ms-transform: scale(1.1825);
 		    transform: scale(1.1825);
-		    -moz-filter: blur(0.8rem);
-		    -webkit-filter: blur(0.8rem);
-		    -ms-filter: blur(0.8rem);
 		    filter: blur(0.8rem);
 		`;
 	}else{
 		return `
-			-moz-transform: scale(1.1);
-		    -webkit-transform: scale(1.1);
-		    -ms-transform: scale(1.1);
 		    transform: scale(1.1);
 		`;
 	}
@@ -141,9 +132,12 @@ export const HR = styled.hr`
 	height: 1px;
 	opacity: .15;
 	margin: 1em 0;
-	background-image: -webkit-linear-gradient(left, #f0f0f0, #222222, #f0f0f0);
+	background-image: linear-gradient(to right, #f0f0f0, #222222, #f0f0f0);
 `;
 
+export const H3 = styled.h3`
+	font-family: "Times New Roman";
+`;
 
 export const mobileWidth = 700;
 export const tabletWidth = 1024;

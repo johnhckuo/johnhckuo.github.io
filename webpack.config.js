@@ -17,35 +17,19 @@ module.exports = {
     filename: 'bundle.js'
   },
   module: {
-    loaders: [
-        {
-          test: /\.(gif|png|jpe?g|svg)$/i,
-          use: [
-            'file-loader',
-            {
-              loader: 'image-webpack-loader',
-              options: {
-                bypassOnDebug: true,
-              },
-            },
-          ],
-        }
-    ],
     rules: [
         {
-           test: /\.css$/,
-           use: extractPlugin.extract({ 
-             fallback: 'style-loader',
-             use: [ 'css-loader' ]
-           })
-        },
-        {
-          test: /\.js$/,
-          exclude: /node_modules/,
-          loader: 'eslint-loader',
-          options: {
-            fix: true
-          }
+          test: /\.css$/,
+          use: extractPlugin.extract({ 
+            fallback: 'style-loader',
+            use: [ 
+              { 
+                loader: 'css-loader', 
+                options: { importLoaders: 1, minimize: true } 
+              }, 
+              'postcss-loader'
+            ]
+          })  
         },
         {test: /\.jpg$/, use: 'url-loader?mimetype=image/jpg'},
         {test: /\.png$/, use: 'url-loader?mimetype=image/png'},

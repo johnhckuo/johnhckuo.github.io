@@ -1,5 +1,4 @@
-import "../style/reset.css"
-import "../style/global.css"
+import "../style/index.css"
 import React from "react"
 import ReactDOM from "react-dom"
 import { HashRouter } from 'react-router-dom'

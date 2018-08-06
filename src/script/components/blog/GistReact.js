@@ -106,7 +106,7 @@ export default class GistReact extends React.Component{
 					<Style.Title>{Object.keys(gist.files)[0].split(".")[0]}</Style.Title>
 					<Style.Description>{gist.description}</Style.Description>
 					<Style.Date>Written at {this.UTCtoLocaleTime(gist.created_at)}</Style.Date>
-					<Style.Link><Link to={`/blog/${gist.id}`}>Read more</Link></Style.Link>
+					<Link to={`/blog/${gist.id}`}><Style.Link>Read more</Style.Link></Link>
 				</li>
 			);
 		}

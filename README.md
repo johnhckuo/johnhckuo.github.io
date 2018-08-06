@@ -13,7 +13,7 @@ cd johnhckuo.github.io
 # install required packages and dependencies
 npm install
 
-# build and run locally
+# build and run at http://localhost:8080 locally
 npm run dev
 
 ```
