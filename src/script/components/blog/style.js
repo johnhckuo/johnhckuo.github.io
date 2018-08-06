@@ -33,6 +33,7 @@ export const Link = styled.span`
 	transition: all .5s;
 	width: 90px;
 	text-align: center;
+	float:right;
 	a{
 		color: initial;
   		text-decoration: initial;
@@ -52,12 +53,10 @@ export const Title = styled.div`
 export const Description = styled.div`
 	color: #666666;
 	width: 80%;
-	font-style: italic;
 `;
 
 export const Date = styled.div`
 	color: #666666;
-	font-style: italic;
 `;
 
 export const ul = styled.ul`
@@ -86,4 +85,9 @@ export const ul = styled.ul`
 		}
 	}
 
+`;
+
+export const Abstract = styled.div`
+	line-height: 1.5rem;
+	font-style: italic;
 `;

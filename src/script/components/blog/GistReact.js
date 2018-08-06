@@ -11,6 +11,7 @@ export default class GistReact extends React.Component{
 		this.state = {
 			username : null,
 			gistList: [],
+			gistAbstract: [],
 			publicOnly: false,
 			isReading: false,
 			isLoading: "true",
@@ -55,7 +56,34 @@ export default class GistReact extends React.Component{
 	fetchGistList(){
 		axios.get(`${this.root}/users/${this.state.username}/gists`)
 		.then((response)=>{
+			var abstractRequests = [];
+			var gistAbstract = [];
+			for (var i = 0 ; i < response.data.length ; i++){
+				let gist = response.data[i];
+				if (this.state.publicOnly && !gist.public){
+					continue;
+				}
+				var abstractKey = Object.keys(gist.files)[0];
+			    abstractRequests.push(axios.get(gist.files[abstractKey].raw_url));
+
+			}
+
+			//make sure all request responds in order
+			Promise.all(abstractRequests).then((response) =>
+				response.map(res =>{
+					let abstract = res.data;
+					let maxLength = 200
+					//trim the string to the maximum length
+					let trimmedAbstract = abstract.substr(0, maxLength);
+					//re-trim if we are in the middle of a word
+					trimmedAbstract = trimmedAbstract.substr(0, Math.min(trimmedAbstract.length, trimmedAbstract.lastIndexOf(" ")))
+					gistAbstract.push(trimmedAbstract);
+					this.setState({gistAbstract})
+				})
+			).catch((err) => console.log(err));
+
 			this.setState({gistList: response.data, isLoading: false})
+
 		})
 		.catch((error)=>{
 			alert("Oops! Something went wrong :(");
@@ -91,7 +119,7 @@ export default class GistReact extends React.Component{
 	}
 
 	render(){
-		const {redirect, gistList, publicOnly, isLoading, isReading, blogContent} = this.state;
+		const {redirect, gistList, gistAbstract, publicOnly, isLoading, isReading, blogContent} = this.state;
 		if (redirect) {
 			return <Redirect to='/'/>;
 		}
@@ -106,6 +134,7 @@ export default class GistReact extends React.Component{
 					<Style.Title>{Object.keys(gist.files)[0].split(".")[0]}</Style.Title>
 					<Style.Description>{gist.description}</Style.Description>
 					<Style.Date>Written at {this.UTCtoLocaleTime(gist.created_at)}</Style.Date>
+					<Style.Abstract>{gistAbstract[i]}.....</Style.Abstract>
 					<Link to={`/blog/${gist.id}`}><Style.Link>Read more</Style.Link></Link>
 				</li>
 			);

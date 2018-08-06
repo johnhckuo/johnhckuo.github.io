@@ -39,7 +39,7 @@ export const Background = styled.div`
 	}
 `;
 
-export const ContainerStyle = styled.div`
+export const Container = styled.div`
 	top: 15%;
 	left: ${props=> props.ContainerWidth === "small" ? "25%" : "10%"};
 	margin-bottom: 15%;
@@ -77,7 +77,7 @@ export const Title = styled.div`
 	}
 `;
 
-export const HomeBtnStyle = styled.span`
+export const HomeBtn = styled.span`
 
 	position: absolute;
 	left: 10px;

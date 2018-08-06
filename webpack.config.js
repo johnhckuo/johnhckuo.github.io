@@ -1,47 +1,68 @@
 var path = require('path');
 var Webpack = require("webpack");
-var ExtractTextPlugin = require('extract-text-webpack-plugin');
+var MiniCssExtractPlugin = require("mini-css-extract-plugin");
 var HtmlWebpackPlugin = require('html-webpack-plugin');
 var CleanWebpackPlugin = require('clean-webpack-plugin');
 var autoprefixer = require('autoprefixer');
 var UglifyJsPlugin = require('uglifyjs-webpack-plugin');
-
-var extractPlugin = new ExtractTextPlugin({
-   filename: 'bundle.css'
-});
+var OptimizeCSSAssetsPlugin = require("optimize-css-assets-webpack-plugin");
 
 module.exports = {
   entry: path.join(__dirname, 'src', 'script', 'index.js'),
   output: {
     path: path.join(__dirname, 'build'),
-    filename: 'bundle.js'
+    filename: 'main.js'
   },
   module: {
     rules: [
         {
+          test: /\.html$/,
+          use: [
+            {
+              loader: "html-loader",
+              options: { minimize: true }
+            }
+          ]
+        },
+        { 
+          test: /\.js$/, 
+          exclude: /node_modules/, 
+          loader: "babel-loader" 
+        },
+        {
           test: /\.css$/,
-          use: extractPlugin.extract({ 
-            fallback: 'style-loader',
-            use: [ 
-              { 
-                loader: 'css-loader', 
-                options: { importLoaders: 1, minimize: true } 
-              }, 
-              'postcss-loader'
-            ]
-          })  
+          use: [
+            MiniCssExtractPlugin.loader,             
+            {
+              loader: "css-loader",
+              options: { minimize: true }
+            }, 
+            'postcss-loader'
+          ] 
         },
         {test: /\.jpg$/, use: 'url-loader?mimetype=image/jpg'},
-        {test: /\.png$/, use: 'url-loader?mimetype=image/png'},
-        { test: /\.js$/, exclude: /node_modules/, loader: "babel-loader" }
+        {test: /\.png$/, use: 'url-loader?mimetype=image/png'}
     ],
   },
   plugins: [
     new HtmlWebpackPlugin({
-      template: 'src/index.html'
+      template: './src/index.html',
+      filename: "./index.html"
     }),
-    extractPlugin,
-    autoprefixer,
-    new UglifyJsPlugin()
-  ]
+    new MiniCssExtractPlugin({
+      filename: "[name].css",
+      chunkFilename: "[id].css"
+    }),
+    autoprefixer
+  ],
+  optimization: {
+    minimizer: [
+      new UglifyJsPlugin({
+        cache: true,
+        parallel: true,
+        sourceMap: true 
+      }),
+      new OptimizeCSSAssetsPlugin({})
+    ]
+  }
 };

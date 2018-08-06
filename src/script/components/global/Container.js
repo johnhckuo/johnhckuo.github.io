@@ -1,5 +1,5 @@
 import React from "react"
-import {ContainerStyle, HomeBtnStyle, Title, HR, H3} from "./style"
+import * as Style from "./style"
 import { FaArrowLeft } from 'react-icons/fa';
 
 export default class Container extends React.Component{
@@ -32,19 +32,19 @@ export default class Container extends React.Component{
 
 	render(){
 		return(
-			<ContainerStyle active={this.state.init} ContainerWidth={this.props.width}>
-	          	<HomeBtnStyle onClick = {this.historyBack} >
+			<Style.Container active={this.state.init} ContainerWidth={this.props.width}>
+	          	<Style.HomeBtn onClick = {this.historyBack} >
 	  				<FaArrowLeft />
-	  			</HomeBtnStyle>
-				<Title>
+	  			</Style.HomeBtn>
+				<Style.Title>
 					<h2>{this.props.FirstTitle}</h2>
-					<HR />
+					<Style.HR />
 					{
-						this.props.SecondTitle ? <H3>{this.props.SecondTitle}</H3> : null
+						this.props.SecondTitle ? <Style.H3>{this.props.SecondTitle}</Style.H3> : null
 					}
-				</Title>
+				</Style.Title>
 				{this.props.children}
-			</ContainerStyle>
+			</Style.Container>
 		);
 	}
 
