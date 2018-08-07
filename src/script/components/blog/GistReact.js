@@ -78,11 +78,11 @@ export default class GistReact extends React.Component{
 					//re-trim if we are in the middle of a word
 					trimmedAbstract = trimmedAbstract.substr(0, Math.min(trimmedAbstract.length, trimmedAbstract.lastIndexOf(" ")))
 					gistAbstract.push(trimmedAbstract);
-					this.setState({gistAbstract})
+					this.setState({gistAbstract, isLoading: false})
 				})
 			).catch((err) => console.log(err));
 
-			this.setState({gistList: response.data, isLoading: false})
+			this.setState({gistList: response.data})
 
 		})
 		.catch((error)=>{

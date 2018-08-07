@@ -3,7 +3,6 @@ var Webpack = require("webpack");
 var MiniCssExtractPlugin = require("mini-css-extract-plugin");
 var HtmlWebpackPlugin = require('html-webpack-plugin');
 var CleanWebpackPlugin = require('clean-webpack-plugin');
-var autoprefixer = require('autoprefixer');
 var UglifyJsPlugin = require('uglifyjs-webpack-plugin');
 var OptimizeCSSAssetsPlugin = require("optimize-css-assets-webpack-plugin");
 
@@ -35,7 +34,7 @@ module.exports = {
             MiniCssExtractPlugin.loader,             
             {
               loader: "css-loader",
-              options: { minimize: true }
+              options: { minimize: true, autoprefixer: false  }
             }, 
             'postcss-loader'
           ] 
@@ -52,8 +51,7 @@ module.exports = {
     new MiniCssExtractPlugin({
       filename: "[name].css",
       chunkFilename: "[id].css"
-    }),
-    autoprefixer
+    })
   ],
   optimization: {
     minimizer: [

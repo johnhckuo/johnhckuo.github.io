@@ -4,7 +4,7 @@ body{
     -moz-font-smoothing:antialiased!important;
     text-rendering:optimizelegibility!important;
     overflow-x:hidden;
-    font-family:Fira Sans,sans-serif
+    font-family:Fira Sans,sans-serif;
 }
 @keyframes spin{
     0%{
@@ -28,7 +28,7 @@ body{
 }
 
 .blogContent{
-	margin-top: 3%;
+    margin-top: 3%;
 }
 
 .blogContent pre{
