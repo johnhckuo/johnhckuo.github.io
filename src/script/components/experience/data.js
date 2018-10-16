@@ -2,15 +2,15 @@ const Experiences = [
 	{
 		title:"Blockchain Software Engineer",
 		company: "IBM Singapore",
-		startDate: "2018.11",
-		endDate: " unknown",
+		startDate: "2018.10",
+		endDate: " now",
 		description:[
 			// "Collaborate with other engineers and management to help design interoperability between public blockchain platforms including Ethereum, Bitcoin, Stellar, and enterprise platforms like Hyperledger Fabric, Burrow etc.",
 			// "Design and implementation of low-latency, high-availability, and performant applications",
 			// "Implement security and data protection schemes, such as PKCS#11 and other PKI systems"
-			"Starting in Nov 2018. Can’t wait!"
+			"Update soon"
 		],
-		logo: "ibm.jpg"	
+		logo: "ibm.jpg"
 	},
 	{
 		title:"VR Service Developer Intern",
@@ -22,7 +22,7 @@ const Experiences = [
 			"Responsible for the VR ads of Pirates of the Caribbean: Dead Men Tell No Tales and Dongfeng Citroen.",
 			"Integrate the opinions of marketing team, 3D artist, backend developer, making the VR ads project executed more smoothly."
 		],
-		logo: "vive.jpg"	
+		logo: "vive.jpg"
 	},
 	{
 		title:"Blockchain Research Assistant",

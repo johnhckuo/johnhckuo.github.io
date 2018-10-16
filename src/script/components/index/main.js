@@ -8,7 +8,7 @@ export default class Index extends React.Component{
 
   constructor(props){
     super(props);
-    this.state = {init: false, expand: false};
+    this.state = {init: false};
   }
 
   componentDidMount(){
@@ -16,18 +16,13 @@ export default class Index extends React.Component{
       this.setState({init : true})
     }, 500)
 
-    setTimeout(()=>{
-      this.setState({expand : true})
-      window.scrollTo(0, 0);
-    }, 800)
-
+    window.scrollTo(0, 0);
     this.props.blur(false);
   }
 
   componentWillUnmount(){
     this.setState({
       init:false,
-      expand:false
     })
     this.props.blur(true);
   }
@@ -38,7 +33,7 @@ export default class Index extends React.Component{
         <Style.Icon>
           <img src={myself} alt="My selfie"/>
         </Style.Icon>
-        <Style.Intro expand={this.state.expand} device={this.props.device}>
+        <Style.Intro expand={this.state.init || this.props.loaded} device={this.props.device}>
           <h1>John Kuo</h1>
           <Style.HR />
           <h2>Passionate Programmer / Amateur Gamer</h2>

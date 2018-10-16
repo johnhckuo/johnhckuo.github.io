@@ -26,8 +26,8 @@ export const Icon = styled.div`
     border: 0;
     border-radius: 50%;
     border: 3px solid #fff;
-    height: 150px;
-    width: 150px;
+    height: 125px;
+    width: 125px;
   }
   &:after{
     content: '';

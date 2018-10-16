@@ -8,7 +8,7 @@ import Experience from "../experience/main"
 import Blog from "../blog/main"
 import Index from "../index/main"
 import * as Style from "./style"
-import {Background, mobileWidth} from "../global/style"
+import {Background, mobileWidth, BackgroundFilter} from "../global/style"
 
 export default class Routes extends React.Component{
 
@@ -24,7 +24,7 @@ export default class Routes extends React.Component{
   componentDidMount(){
     setTimeout(()=>{
       this.setState({init : true})
-    }, 10)
+    }, 1500)
     window.addEventListener('resize', this.updateWindowDimensions);
     this.updateWindowDimensions();
   }
@@ -56,12 +56,13 @@ export default class Routes extends React.Component{
   render(){
     return (
         <Style.RootContainer>
-            <Background blur={this.state.blur} init={this.state.init}/>
+            <Background blur={this.state.blur}/>
+            <BackgroundFilter init={this.state.init}/>
             <Route path="/" component={this.logPageView} />
             <Switch>
                 <Route exact path="/" render={
                   props=>
-                    <Index {...props} blur={this.backgroundBlur} device={this.state.device} />
+                    <Index {...props} blur={this.backgroundBlur} device={this.state.device} loaded={this.state.init}/>
                   }
                 />
                 <Route exact path="/aboutme" render={

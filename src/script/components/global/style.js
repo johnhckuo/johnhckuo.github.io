@@ -4,17 +4,27 @@ import background from '../../../images/background.jpg'
 function blur(isBlur){
 	if (isBlur){
 		return `
-		    transform: scale(1.1825);
-		    filter: blur(0.8rem);
+		    transform: scale(1.03);
+		    filter: blur(5px);
 		`;
 	}else{
 		return `
-		    transform: scale(1.1);
+		    transform: scale(1.13);
 		`;
 	}
 
 }
 
+export const BackgroundFilter = styled.div`
+	position: fixed;
+	top:0px;
+	left: 0px;
+	width: 100vw;
+	height: 100vh;
+	background: black;
+	transition: all 1.5s ease-out;
+	opacity:${props=>props.init ? 0 : 1};
+`;
 
 export const Background = styled.div`
 	position: fixed;
@@ -28,7 +38,6 @@ export const Background = styled.div`
 	background-attachment: fixed;
 	${props=>blur(props.blur)};
 	transition: all .5s;
-	opacity:${props=>props.init ? 1 : 0};
 	&:before{
 		position: absolute;
 	    z-index: 2;
