@@ -23,21 +23,20 @@ module.exports = {
             }
           ]
         },
-        { 
-          test: /\.js$/, 
-          exclude: /node_modules/, 
-          loader: "babel-loader" 
+        {
+          test: /\.js$/,
+          exclude: /node_modules/,
+          loader: "babel-loader"
         },
         {
           test: /\.css$/,
           use: [
-            MiniCssExtractPlugin.loader,             
+            MiniCssExtractPlugin.loader,
             {
               loader: "css-loader",
-              options: { minimize: true, autoprefixer: false  }
-            }, 
+            },
             'postcss-loader'
-          ] 
+          ]
         },
         {test: /\.jpg$/, use: 'url-loader?mimetype=image/jpg'},
         {test: /\.png$/, use: 'url-loader?mimetype=image/png'}
@@ -58,7 +57,7 @@ module.exports = {
       new UglifyJsPlugin({
         cache: true,
         parallel: true,
-        sourceMap: true 
+        sourceMap: true
       }),
       new OptimizeCSSAssetsPlugin({})
     ]
