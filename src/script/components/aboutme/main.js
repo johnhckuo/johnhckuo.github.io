@@ -24,9 +24,8 @@ const Aboutme = (props)=>{
 							<div><FaCode />I got mad skills</div>
 							<div><FaHeart />I am passionate</div>
 						</Style.Characteristic>
-						I am a graduate of the MIS department in National Chengchi University.<br />
 						I hold over 7 years of programming experience. <br />
-						Love to work on some side projects related to web development, blockchain applications, and 3D game development.
+						And love to work on some side projects related to web development, blockchain applications, and 3D game development.
 						<HR />
 						I&#39;ve received my master degree in July, 2017. <br />
 						My research is based on blockchain, and I&#39;ve proposed a method to facilitate

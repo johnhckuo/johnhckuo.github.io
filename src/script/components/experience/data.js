@@ -5,10 +5,10 @@ const Experiences = [
 		startDate: "2018.10",
 		endDate: " now",
 		description:[
-			// "Collaborate with other engineers and management to help design interoperability between public blockchain platforms including Ethereum, Bitcoin, Stellar, and enterprise platforms like Hyperledger Fabric, Burrow etc.",
-			// "Design and implementation of low-latency, high-availability, and performant applications",
-			// "Implement security and data protection schemes, such as PKCS#11 and other PKI systems"
-			"Update soon"
+			"Implement multiple api mircro-services of the IBM worldwire project.",
+			"Integrate CyberArk vault, HSM, and AWS secret manager solutions into our services to safely storing credentials of each participant users.",
+			"Implement openvpn endpoint for user to easily establish connection to all the worldwire services.",
+			"Implement SDK & utility functions for the microservices on the worldwire."
 		],
 		logo: "ibm.jpg"
 	},

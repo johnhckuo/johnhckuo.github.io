@@ -10,7 +10,7 @@ export const IndexContainer = styled.div`
   transition-timing-function: ease-out;
   height: 60%;
   color: #ffffff;
-  letter-spacing: 3px;
+  letter-spacing: 0.5px;
   margin-top: 2%;
   opacity:${props=> props.active ? 1 : 0};
 `;
@@ -50,7 +50,8 @@ export const Intro = styled.div`
   border-top: 1px solid #fff;
   border-bottom: 1px solid #fff;
   text-align: center;
-  transition: all 1s;
+  transition: all 0.75s ease,opacity 0.325s ease-in-out;
+  transition-delay: 0.5s;
   height: ${props=> props.expand ? "" : "0px"};
   box-sizing: border-box;
   max-height: 40rem;

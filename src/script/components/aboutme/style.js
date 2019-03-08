@@ -46,7 +46,7 @@ export const Characteristic = styled.div`
 		flex-direction: column;
 		justify-content: center;
 		align-items: center;
-		width: 170px;
+		width: 200px;
 		font-size: 1.2rem;
 		font-weight: bold;
 		margin-top: 20px;

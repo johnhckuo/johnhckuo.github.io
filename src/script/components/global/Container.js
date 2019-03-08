@@ -23,11 +23,12 @@ export default class Container extends React.Component{
 		}, 650)
 	}
 
+	//showing next content
 	componentDidMount(){
 		setTimeout(()=>{
 			this.setState({init: true});
 			window.scrollTo(0, 0);
-		}, 650)
+		}, 450)
 	}
 
 	render(){
