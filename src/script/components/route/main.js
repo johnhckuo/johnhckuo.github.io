@@ -24,7 +24,7 @@ export default class Routes extends React.Component{
   componentDidMount(){
     setTimeout(()=>{
       this.setState({init : true})
-    }, 1500)
+    }, 2000)
     window.addEventListener('resize', this.updateWindowDimensions);
     this.updateWindowDimensions();
   }

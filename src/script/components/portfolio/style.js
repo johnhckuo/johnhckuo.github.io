@@ -60,7 +60,7 @@ export const Title = styled.div`
 
 	}
 	a{
-		font-size: 1.6rem;
+		font-size: 1.3rem;
 		text-decoration: none;
 		color: #282828;
 		transition: color .4s;
