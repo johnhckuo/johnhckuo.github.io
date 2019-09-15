@@ -5,10 +5,10 @@ const Experiences = [
 		startDate: "2018.10",
 		endDate: " now",
 		description:[
-			"Implement multiple api mircro-services of the IBM worldwire project.",
+			"Implement micro-services of the IBM Blockchain World Wire project.",
+			"Develop the underlying payment system of World Wire using message broker & improve its performance.",
 			"Integrate CyberArk vault, HSM, and AWS secret manager solutions into our services to safely storing credentials of each participant users.",
-			"Implement openvpn endpoint for user to easily establish connection to all the worldwire services.",
-			"Implement SDK & utility functions for the microservices on the worldwire."
+			"Implement SDK & utility functions for the microservices on the World Wire."
 		],
 		logo: "ibm.jpg"
 	},
