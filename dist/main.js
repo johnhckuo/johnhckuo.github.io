@@ -20,13 +20,33 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
 
 /***/ }),
 
+/***/ "./node_modules/three/examples/jsm/WebGL.js":
+/*!**************************************************!*\
+  !*** ./node_modules/three/examples/jsm/WebGL.js ***!
+  \**************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"WEBGL\": () => /* binding */ WEBGL\n/* harmony export */ });\nvar WEBGL = {\n\n\tisWebGLAvailable: function () {\n\n\t\ttry {\n\n\t\t\tvar canvas = document.createElement( 'canvas' );\n\t\t\treturn !! ( window.WebGLRenderingContext && ( canvas.getContext( 'webgl' ) || canvas.getContext( 'experimental-webgl' ) ) );\n\n\t\t} catch ( e ) {\n\n\t\t\treturn false;\n\n\t\t}\n\n\t},\n\n\tisWebGL2Available: function () {\n\n\t\ttry {\n\n\t\t\tvar canvas = document.createElement( 'canvas' );\n\t\t\treturn !! ( window.WebGL2RenderingContext && canvas.getContext( 'webgl2' ) );\n\n\t\t} catch ( e ) {\n\n\t\t\treturn false;\n\n\t\t}\n\n\t},\n\n\tgetWebGLErrorMessage: function () {\n\n\t\treturn this.getErrorMessage( 1 );\n\n\t},\n\n\tgetWebGL2ErrorMessage: function () {\n\n\t\treturn this.getErrorMessage( 2 );\n\n\t},\n\n\tgetErrorMessage: function ( version ) {\n\n\t\tvar names = {\n\t\t\t1: 'WebGL',\n\t\t\t2: 'WebGL 2'\n\t\t};\n\n\t\tvar contexts = {\n\t\t\t1: window.WebGLRenderingContext,\n\t\t\t2: window.WebGL2RenderingContext\n\t\t};\n\n\t\tvar message = 'Your $0 does not seem to support <a href=\"http://khronos.org/webgl/wiki/Getting_a_WebGL_Implementation\" style=\"color:#000\">$1</a>';\n\n\t\tvar element = document.createElement( 'div' );\n\t\telement.id = 'webglmessage';\n\t\telement.style.fontFamily = 'monospace';\n\t\telement.style.fontSize = '13px';\n\t\telement.style.fontWeight = 'normal';\n\t\telement.style.textAlign = 'center';\n\t\telement.style.background = '#fff';\n\t\telement.style.color = '#000';\n\t\telement.style.padding = '1.5em';\n\t\telement.style.width = '400px';\n\t\telement.style.margin = '5em auto 0';\n\n\t\tif ( contexts[ version ] ) {\n\n\t\t\tmessage = message.replace( '$0', 'graphics card' );\n\n\t\t} else {\n\n\t\t\tmessage = message.replace( '$0', 'browser' );\n\n\t\t}\n\n\t\tmessage = message.replace( '$1', names[ version ] );\n\n\t\telement.innerHTML = message;\n\n\t\treturn element;\n\n\t}\n\n};\n\n\n\n\n//# sourceURL=webpack://johnhckuo.github.io/./node_modules/three/examples/jsm/WebGL.js?");
+
+/***/ }),
+
 /***/ "./src/main.js":
 /*!*********************!*\
   !*** ./src/main.js ***!
   \*********************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var three__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! three */ \"./node_modules/three/build/three.module.js\");\n\r\n\r\n\r\nconst scene = new three__WEBPACK_IMPORTED_MODULE_0__.Scene();\r\nconst camera = new three__WEBPACK_IMPORTED_MODULE_0__.PerspectiveCamera( 75, window.innerWidth / window.innerHeight, 0.1, 1000 );\r\n\r\nconst renderer = new three__WEBPACK_IMPORTED_MODULE_0__.WebGLRenderer();\r\nrenderer.setSize( window.innerWidth, window.innerHeight );\r\ndocument.body.appendChild( renderer.domElement );\r\n\r\n\r\nconst geometry = new three__WEBPACK_IMPORTED_MODULE_0__.BoxGeometry();\r\nconst material = new three__WEBPACK_IMPORTED_MODULE_0__.MeshBasicMaterial( { color: 0x00ff00 } );\r\nconst cube = new three__WEBPACK_IMPORTED_MODULE_0__.Mesh( geometry, material );\r\nscene.add( cube );\r\n\r\ncamera.position.z = 5;\r\n\r\nfunction animate() {\r\n    //pauses when the user navigates to another browser tab\r\n    requestAnimationFrame( animate );\r\n    cube.rotation.x += 0.01;\r\n    cube.rotation.y += 0.01;\r\n\trenderer.render( scene, camera );\r\n}\r\nanimate();\r\n\r\n\r\n\n\n//# sourceURL=webpack://johnhckuo.github.io/./src/main.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var three__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! three */ \"./node_modules/three/build/three.module.js\");\n/* harmony import */ var three_examples_jsm_WebGL_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! three/examples/jsm/WebGL.js */ \"./node_modules/three/examples/jsm/WebGL.js\");\n/* harmony import */ var _objects_cube_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./objects/cube.js */ \"./src/objects/cube.js\");\n\r\n\r\n\r\n\r\n\r\nconst scene = new three__WEBPACK_IMPORTED_MODULE_0__.Scene();\r\nconst camera = new three__WEBPACK_IMPORTED_MODULE_0__.PerspectiveCamera( 75, window.innerWidth / window.innerHeight, 0.1, 1000 );\r\n\r\nconst renderer = new three__WEBPACK_IMPORTED_MODULE_0__.WebGLRenderer();\r\nrenderer.setSize( window.innerWidth, window.innerHeight );\r\ndocument.body.appendChild( renderer.domElement );\r\n\r\nscene.add( _objects_cube_js__WEBPACK_IMPORTED_MODULE_2__.default.obj );\r\n\r\ncamera.position.z = 5;\r\n\r\nfunction animate() {\r\n    //pauses when the user navigates to another browser tab\r\n    requestAnimationFrame( animate );\r\n    _objects_cube_js__WEBPACK_IMPORTED_MODULE_2__.default.animate();\r\n\trenderer.render( scene, camera );\r\n}\r\n\r\nif ( three_examples_jsm_WebGL_js__WEBPACK_IMPORTED_MODULE_1__.WEBGL.isWebGLAvailable() ) {\r\n\r\n\t// Initiate function or other initializations here\r\n\tanimate();\r\n\r\n} else {\r\n\r\n\tconst warning = three_examples_jsm_WebGL_js__WEBPACK_IMPORTED_MODULE_1__.WEBGL.getWebGLErrorMessage();\r\n\tdocument.getElementById( 'container' ).appendChild( warning );\r\n\r\n}\r\n\r\n\n\n//# sourceURL=webpack://johnhckuo.github.io/./src/main.js?");
+
+/***/ }),
+
+/***/ "./src/objects/cube.js":
+/*!*****************************!*\
+  !*** ./src/objects/cube.js ***!
+  \*****************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => __WEBPACK_DEFAULT_EXPORT__\n/* harmony export */ });\n/* harmony import */ var three__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! three */ \"./node_modules/three/build/three.module.js\");\n\r\n\r\nconst geometry = new three__WEBPACK_IMPORTED_MODULE_0__.BoxGeometry();\r\nconst material = new three__WEBPACK_IMPORTED_MODULE_0__.MeshBasicMaterial( { color: 0x00ff00 } );\r\n\r\nconst cube = {\r\n    obj: new three__WEBPACK_IMPORTED_MODULE_0__.Mesh( geometry, material ),\r\n    animate: function(){\r\n        this.obj.rotation.x += 0.01;\r\n        this.obj.rotation.y += 0.01;\r\n    }\r\n}\r\n\r\n\r\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (cube);\r\n\n\n//# sourceURL=webpack://johnhckuo.github.io/./src/objects/cube.js?");
 
 /***/ })
 
