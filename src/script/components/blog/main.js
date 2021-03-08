@@ -23,7 +23,7 @@ export default class Blog extends React.Component{
 				history={this.props.history}
 				FirstTitle = "Some notes and random thoughts"
 				//SecondTitle = {<React.Fragment>“ I write to make sense of the world ”</React.Fragment>}
-				SecondTitle={<React.Fragment>“I got bad memory.” <br /> -me</React.Fragment>}
+				SecondTitle={<React.Fragment>“I got a bad memory.” <br /> -me</React.Fragment>}
 			>
 				<GistReact blogId={this.state.blogId} username={this.state.username} history={this.props.history} publicOnly="true"/>
 			</Container>
