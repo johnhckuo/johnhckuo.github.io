@@ -29,6 +29,9 @@ export const Aboutme = styled.div`
 		list-style-type: square;
 		padding-left: 2rem;
 	}
+	b{
+		font-weight:bold;
+	}
 `;
 
 export const Characteristic = styled.div`

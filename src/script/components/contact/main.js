@@ -3,6 +3,7 @@ import * as Style from "./style"
 import {Btn} from "../global/style"
 import firebase from "firebase"
 import Container from "../global/Container"
+import PropTypes from 'prop-types';
 
 export default class Contact extends React.Component{
 	constructor(props){
@@ -104,7 +105,7 @@ export default class Contact extends React.Component{
 			            </div>
 			        </Style.Form>
 		        </Style.FormContainer>
-		        <Style.EmailMe>Or, just email me directly at <a href="mailto:johnhckuo@gmail.com" target="_blank"><strong>johnhckuo@gmail.com</strong></a>.</Style.EmailMe>
+		        <Style.EmailMe>Or, just email me directly at <a href="mailto:johnhckuo@gmail.com" target="_blank" rel="noopener noreferrer"><strong>johnhckuo@gmail.com</strong></a>.</Style.EmailMe>
 
 
 			</Container>
@@ -112,4 +113,9 @@ export default class Contact extends React.Component{
 	}
 
 
+}
+
+Contact.propTypes = {
+	device: PropTypes.string.isRequired,
+	history: PropTypes.object.isRequired
 }

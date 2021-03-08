@@ -1,5 +1,5 @@
 import React from "react"
-import * as Style from "./style"
+import PropTypes from 'prop-types';
 import Container from "../global/Container"
 import GistReact from "./GistReact"
 
@@ -21,8 +21,9 @@ export default class Blog extends React.Component{
 			<Container
 				width="large"
 				history={this.props.history}
-				FirstTitle = "Blog"
-        		SecondTitle = "“ I write to make sense of the world ”"
+				FirstTitle = "Some notes and random thoughts"
+				//SecondTitle = {<React.Fragment>“ I write to make sense of the world ”</React.Fragment>}
+				SecondTitle={<React.Fragment>“I got bad memory.” <br /> -me</React.Fragment>}
 			>
 				<GistReact blogId={this.state.blogId} username={this.state.username} history={this.props.history} publicOnly="true"/>
 			</Container>
@@ -30,4 +31,10 @@ export default class Blog extends React.Component{
 	}
 
 
+}
+
+
+Blog.propTypes = {
+	match: PropTypes.object.isRequired,
+	history: PropTypes.object.isRequired
 }

@@ -3,6 +3,7 @@ import * as Style from "./style.js"
 import * as FontAwesome from 'react-icons/fa'
 import Portfolios from "./data"
 import Container from "../global/Container"
+import PropTypes from 'prop-types';
 
 export default class Portfolio extends React.Component{
   constructor(props){
@@ -90,4 +91,9 @@ const HashTagList = function(props){
       }
     </datalist>
   );
+}
+
+
+Portfolio.propTypes = {
+	history: PropTypes.object.isRequired
 }

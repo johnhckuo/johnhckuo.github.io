@@ -11,7 +11,7 @@ export const Filter = styled.div`
 `;
 
 export const FilterInput = styled.input.attrs({
-	placeholder: 'Enter a hashtag'
+	placeholder: 'Enter a keyword'
 })`
 	border: 1px solid transparent;
 	border-radius: 2px 0 0 2px;

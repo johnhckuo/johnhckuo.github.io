@@ -1,6 +1,7 @@
 import React from "react"
 import * as Style from "./style"
 import { FaArrowLeft } from 'react-icons/fa';
+import PropTypes from 'prop-types';
 
 export default class Container extends React.Component{
 	constructor(props){
@@ -50,4 +51,12 @@ export default class Container extends React.Component{
 	}
 
 
+}
+
+Container.propTypes = {
+	children: PropTypes.any,
+	history: PropTypes.object.isRequired,
+	width: PropTypes.string.isRequired,
+	FirstTitle: PropTypes.string.isRequired,
+	SecondTitle: PropTypes.object.isRequired
 }

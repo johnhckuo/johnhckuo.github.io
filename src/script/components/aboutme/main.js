@@ -4,6 +4,7 @@ import {FaAmericanSignLanguageInterpreting, FaCode, FaHeart, FaSmile } from 'rea
 import myself from "../../../images/aboutme_cover.jpg"
 import {HR} from "../global/style"
 import Container from "../global/Container"
+import PropTypes from 'prop-types';
 
 const Aboutme = (props)=>{
 	return(
@@ -24,27 +25,25 @@ const Aboutme = (props)=>{
 							<div><FaCode />I got mad skills</div>
 							<div><FaHeart />I am passionate</div>
 						</Style.Characteristic>
-						I hold over 7 years of programming experience. <br />
-						And love to work on some side projects related to web development, blockchain applications, and 3D game development.
+						I am a fullstack web developer and blockchain specialist focused on <u>web development</u>, <u>blockchain applications</u>, and <u>3D game design.</u><br />
+						I&#39;ve received my master degree in July, 2017 and filed two blockchain patents in May, 2020. <br />
 						<HR />
-						I&#39;ve received my master degree in July, 2017. <br />
-						My research is based on blockchain, and I&#39;ve proposed a method to facilitate
-						the design of a blockchain-based ecosystem toward success and to make it self-sustaining. <br />
-						In the meanwhile, I&#39;ve also built a web-based farming game called <a target="_blank" rel="noopener" aria-label="blockfarm" name="blockfarm" href="https://github.com/johnhckuo/Block-Farm">Blockfarm</a> that allows users to trade with multiple users at the same time! <br />
-						What make this game so special are that:
-						<ul>
-							<li>All the trading process and results will be recorded on Ethereum.</li>
-							<li>Players can choose to play as a thief to steal other farmers&#39; crops, or to play as cop to guard the farmers.</li>
-							<li>Farmers can have a multi-party transaction with other players. It means that if A got what B wants, B got what C wants, and C got what A wants, then a transaction consists of A → B → C → A will be established.</li>
-						</ul>
-						<br />
-						In the end, Blockfarm hits 300+ active users!
-
+						The first patent is called <b><u>Blockchain Compliance Verification Network</u></b>(P202000947US01), which is a methodology that indicates whether the transfer of money complies with jurisdictional regulations
+and records the message content including the compliance information via blockchain. <br />
+						The second patent is called <b><u>Blockchain Settlement Network</u></b>(P202000953US01), and it is about how to detect off-chain settlement and then transfer digital value from the receiver to
+the sender based on the detected settlement value. <br /><br />
+						Besides from these, I&#39;m also working on some side-projects on github, and <a target="_blank" rel="noopener noreferrer" aria-label="blockfarm" name="blockfarm" href="https://github.com/johnhckuo/Block-Farm">Blockfarm</a> is one of them.<br />
+						It is a farming game that allows users to trade with each other, and all the transaction will be recorded on Ethereum. <br /> So far Blockfarm has 300+ peak users!
 					</Style.Aboutme>
 				</div>
 			</Style.Intro>
 		</Container>
 	);
+}
+
+Aboutme.propTypes = {
+	history: PropTypes.object.isRequired,
+	device: PropTypes.string
 }
 
 export default Aboutme;

@@ -2,6 +2,7 @@ import React from "react"
 import * as Style from "./style.js"
 import Experiences from "./data"
 import Container from "../global/Container"
+import PropTypes from 'prop-types';
 
 const Experience =(props)=>{
 	return (
@@ -34,6 +35,11 @@ const Experience =(props)=>{
 			</Style.Timeline>
 		</Container>
 	);
+}
+
+Experience.propTypes = {
+	device: PropTypes.string.isRequired,
+	history: PropTypes.object.isRequired
 }
 
 export default Experience;

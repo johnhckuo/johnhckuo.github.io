@@ -3,7 +3,7 @@ import * as Style from "./style"
 import axios from "axios"
 import showdown from "showdown"
 import { Redirect, Link } from 'react-router-dom'
-import { HR } from "../global/style"
+import PropTypes from 'prop-types';
 
 export default class GistReact extends React.Component{
 	constructor(props){
@@ -152,8 +152,20 @@ export default class GistReact extends React.Component{
 	}
 }
 
+GistReact.propTypes = {
+	history: PropTypes.object.isRequired,
+	device: PropTypes.string,
+	username: PropTypes.string.isRequired,
+	publicOnly: PropTypes.string.isRequired,
+	blogId: PropTypes.string
+}
+
 const GistReader = (props)=>{
 	return (
 		<div className="blogContent" dangerouslySetInnerHTML={{__html: props.blogContent}}></div>
 		);
+}
+
+GistReader.propTypes = {
+	blogContent: PropTypes.string
 }

@@ -10,7 +10,7 @@
   ],
   "main": "./main.js",
   "scripts": {
-    "lint": "./node_modules/.bin/eslint eslint 'src/**/*.@(js|jsx)'",
+    "lint": "./node_modules/.bin/eslint 'src/**/*.@(js|jsx)'",
     "dev": "webpack-dev-server --mode development --open",
     "build": "webpack --mode development",
     "build:prod": "webpack --mode production"

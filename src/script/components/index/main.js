@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom'
 import * as Style from "./style"
 import { FaGithubSquare, FaLinkedin, FaEnvelopeSquare, FaSteamSquare } from 'react-icons/fa';
 import myself from "../../../images/me.jpg"
+import PropTypes from 'prop-types';
 
 export default class Index extends React.Component{
 
@@ -42,16 +43,22 @@ export default class Index extends React.Component{
           <Link to="/aboutme"><Style.Link firstLink={true}>About Me</Style.Link></Link>
           <Link to="/experience"><Style.Link>Experience</Style.Link></Link>
           <Link to="/portfolio"><Style.Link>Portfolio</Style.Link></Link>
-          <Link to="/blog"><Style.Link lastLink={true}>Blog</Style.Link></Link>
+          <Link to="/blog"><Style.Link lastLink={true}>Thoughts</Style.Link></Link>
         </Style.Links>
         <Style.SocialIcon device={this.props.device}>
-          <a rel="noopener" aria-label="github" name="github" href="https://github.com/johnhckuo" target="_blank"><FaGithubSquare /></a>
-          <a rel="noopener" aria-label="linkedin" name="linkedin" href="https://www.linkedin.com/in/hung-chung-kuo/" target="_blank"><FaLinkedin /></a>
-          <a rel="noopener" aria-label="email" name="email" href="mailto:johnhckuo@gmail.com" target="_blank"><FaEnvelopeSquare /></a>
-          <a rel="noopener" aria-label="steam" name="steam" href="https://steamcommunity.com/id/grpforever/" target="_blank"><FaSteamSquare /></a>
+          <a aria-label="github" name="github" href="https://github.com/johnhckuo" target="_blank" rel="noopener noreferrer"><FaGithubSquare /></a>
+          <a aria-label="linkedin" name="linkedin" href="https://www.linkedin.com/in/hung-chung-kuo/" target="_blank" rel="noopener noreferrer"><FaLinkedin /></a>
+          <a aria-label="email" name="email" href="mailto:johnhckuo@gmail.com" target="_blank" rel="noopener noreferrer"><FaEnvelopeSquare /></a>
+          <a aria-label="steam" name="steam" href="https://steamcommunity.com/id/grpforever/" target="_blank" rel="noopener noreferrer"><FaSteamSquare /></a>
         </Style.SocialIcon>
       </Style.IndexContainer>
 
     );
   }
+}
+
+Index.propTypes = {
+	device: PropTypes.string,
+  loaded: PropTypes.bool.isRequired,
+  blur: PropTypes.any
 }
