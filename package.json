@@ -8,13 +8,13 @@
     "component",
     "reactjs"
   ],
-  "main": "./build",
+  "main": "./docs",
   "scripts": {
     "lint": "./node_modules/.bin/eslint eslint 'src/**/*.@(js|jsx)'",
     "dev": "webpack-dev-server --mode development --open",
-    "clean": "rimraf ./build",
-    "build": "rimraf ./build && webpack --mode development",
-    "build:prod": "rimraf ./build && webpack --mode production"
+    "clean": "rimraf ./docs",
+    "build": "rimraf ./docs && webpack --mode development",
+    "build:prod": "rimraf ./docs && webpack --mode production"
   },
   "repository": {
     "type": "git",
