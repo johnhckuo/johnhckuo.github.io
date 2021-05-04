@@ -1,18 +1,18 @@
 const Experiences = [
-	{
-		title:"Application Software Engineer",
-		company: "LINE Bank",
-		startDate: "2021.03",
-		endDate: " now",
-		description:[
-			"Analysis of Core Banking IT environment and solution design.",
-			"Collaborate with team member with senior personnel regarding trade-offs, best practices, project management.",
-			"Develop scalable, reliable and maintainable service-based software.",
-			"Problem solving and issue tracking include vendor management.",
-			"Deploy system to production and monitor service health."
-		],
-		logo: "line.jpg"
-	},
+	// {
+	// 	title:"Application Software Engineer",
+	// 	company: "LINE Bank",
+	// 	startDate: "2021.03",
+	// 	endDate: " now",
+	// 	description:[
+	// 		"Analysis of Core Banking IT environment and solution design.",
+	// 		"Collaborate with team member with senior personnel regarding trade-offs, best practices, project management.",
+	// 		"Develop scalable, reliable and maintainable service-based software.",
+	// 		"Problem solving and issue tracking include vendor management.",
+	// 		"Deploy system to production and monitor service health."
+	// 	],
+	// 	logo: "line.jpg"
+	// },
 	{
 		title:"Blockchain Software Engineer",
 		company: "IBM Singapore",
