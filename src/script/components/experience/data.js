@@ -14,6 +14,32 @@ const Experiences = [
 	// 	logo: "line.jpg"
 	// },
 	{
+		title:"Blockchain Developer",
+		company: "Crypto.com",
+		startDate: "2022.03",
+		endDate: " now",
+		description:[
+			"Analyze DeFi protocols and integrate with Crypto.com DeFi wallet to support staking/lending natively.",
+			"Improve wallet performance by utilizing MakerDAO multi-call contracts & Redis/local cache design.",
+			"Mentor junior developers and assign tasks based on their interests and skill set.",
+			"Establish CICD pipelines for less deployment effort & faster error discovery."
+		],
+		logo: "cro.jpg"
+	},
+	{
+		title:"Blockchain Developer",
+		company: "AMIS Technology",
+		startDate: "2021.06",
+		endDate: " 2022.03",
+		description:[
+			"Utilize EIP-1967, ERC-721, ERC-1155, EIP-165,and EIP-3009 to implement upgradeable NFT smart contract.",
+			"Implement backend logic for Qubic NFT Marketplace.",
+			"Implement an algorithm to predict the gas price of the next future block more precisely.",
+			"Streamline the smart contract deployment process and evaluate gas usage."
+		],
+		logo: "amis.jpg"
+	},
+	{
 		title:"Blockchain Software Engineer",
 		company: "IBM Singapore",
 		startDate: "2018.10",
